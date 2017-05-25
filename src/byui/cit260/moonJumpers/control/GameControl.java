@@ -13,4 +13,8 @@ public class GameControl {
     public void startNewGame(){
         
     }
+    public boolean saveGame(double player, double weapon, double fuel, double location){
+        return player > 0;
+    }
+    
 }
