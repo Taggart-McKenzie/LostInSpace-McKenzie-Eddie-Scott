@@ -55,6 +55,75 @@ public class AlienControlTest {
         result = instance.calcRunningAway(finalVelocity, initialVelocity, time);
         assertEquals(expResult, result, 0.0);
         
+        // Test 3
+        
+        System.out.println("\tTest case #3");
+        
+        
+        finalVelocity = -1.0;
+        initialVelocity = 5.0;
+        time = 5.0;
+        
+        expResult = -1;
+        result = instance.calcRunningAway(finalVelocity, initialVelocity, time);
+        assertEquals(expResult, result, 0.0);
+        
+        
+        // Test 4
+        
+        System.out.println("\tTest case #4");
+        
+        
+        finalVelocity = 30;
+        initialVelocity = 35;
+        time = 5.0;
+        
+        expResult = -1;
+        result = instance.calcRunningAway(finalVelocity, initialVelocity, time);
+        assertEquals(expResult, result, 0.0);
+       
+        
+        // Test 5
+        
+        System.out.println("\tTest case #5");
+        
+        
+        finalVelocity = 8.0;
+        initialVelocity = 0.0;
+        time = 5.0;
+        
+        expResult = -1;
+        result = instance.calcRunningAway(finalVelocity, initialVelocity, time);
+        assertEquals(expResult, result, 0.0);
+        
+        
+        // Test 6
+        
+        System.out.println("\tTest case #6");
+        
+        
+        finalVelocity = 0.0;
+        initialVelocity = 5.0;
+        time = 5.0;
+        
+        expResult = -1;
+        result = instance.calcRunningAway(finalVelocity, initialVelocity, time);
+        assertEquals(expResult, result, 0.0);
+       
+        
+        //Test 7
+        
+        System.out.println("\tTest case #7");
+        
+        
+        finalVelocity = 30.0;
+        initialVelocity = 35.0;
+        time = 5.0;
+        
+        expResult = -1;
+        result = instance.calcRunningAway(finalVelocity, initialVelocity, time);
+        assertEquals(expResult, result, 0.0);
+        
     }
     
 }
