@@ -13,12 +13,12 @@ package byui.cit260.moonJumpers.control;
  */
 public class AlienControl {
     
-    public static double calcRunningAway (double finalvelocity, double initialvelocity, double time){
+    public static double calcRunningAway (double finalVelocity, double initialVelocity, double time){
     
-        if (finalvelocity <= 0) {
+        if (finalVelocity <= 0) {
                 return -1;
                         }
-        if (initialvelocity <= 0 || initialvelocity > 15) {
+        if (initialVelocity <= 0 || initialVelocity > 15) {
                 return -1;
                         }
         if (time <= 0) {
@@ -26,7 +26,7 @@ public class AlienControl {
         }
         
         
-         double acceleration = (finalvelocity - initialvelocity) / time;
+         double acceleration = (finalVelocity - initialVelocity) / time;
          
          
          return acceleration;
