@@ -9,6 +9,7 @@ package byui.cit260.moonJumpers.control;
  *
  * @author sshipp57
  * 
+ * 
  */
 public class AlienControl {
     
