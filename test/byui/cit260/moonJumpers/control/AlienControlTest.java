@@ -27,11 +27,11 @@ public class AlienControlTest {
         /*****************************
          *  Test case #1
          */
-        System.out.println("\t Test case #1");
+        System.out.println("\tTest case #1");
         
         //input values for test case #1
-        double finalvelocity = 8.0;
-        double initialvelocity = 5.0;
+        double finalVelocity = 8.0;
+        double initialVelocity = 5.0;
         double time = 5.0;
         
         double expResult = 0.6;
@@ -39,9 +39,21 @@ public class AlienControlTest {
         //created instance of AlienControl class
         AlienControl instance = new AlienControl();
         
-        double result = AlienControl.calcRunningAway(finalvelocity, initialvelocity, time);
+        double result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);
         assertEquals(expResult, result, 0.0001);
         
+         // Test 2
+        
+        System.out.println("\tTest case #2");
+        
+        
+        finalVelocity = 8.0;
+        initialVelocity = -1.0;
+        time = 5.0;
+        
+        expResult = -1;
+        result = instance.calcRunningAway(finalVelocity, initialVelocity, time);
+        assertEquals(expResult, result, 0.0);
         
     }
     
