@@ -31,4 +31,20 @@ public class AlienControl {
          
          return acceleration;
     }
+    public double calcFigthingAlien(double alienAttack, double playerLife){
+        if (alienAttack < 0 || alienAttack > 5){
+            return -1;
+        }
+        if (playerLife < 0){
+            return -1;
+        }
+        
+        double playerLifeFinal = (playerLife - alienAttack);
+        
+        if (playerLifeFinal < 0){
+            playerLifeFinal = 0;
+    }
+        
+        return playerLifeFinal;
+    }
 }
