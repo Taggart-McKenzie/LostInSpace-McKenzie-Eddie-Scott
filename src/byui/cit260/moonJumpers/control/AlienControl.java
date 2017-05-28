@@ -31,7 +31,8 @@ public class AlienControl {
          
          return acceleration;
     }
-    public double calcFigthingAlien(double alienAttack, double playerLife){
+    
+    public static double calcFigthingAlien(double alienAttack, double playerLife){
         if (alienAttack < 0 || alienAttack > 5){
             return -1;
         }
