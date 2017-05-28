@@ -125,5 +125,90 @@ public class AlienControlTest {
         assertEquals(expResult, result, 0.0);
         
     }
+
+    /**
+     * Test of calcFigthingAlien method, of class AlienControl.
+     */
+    @Test
+    public void testCalcFigthingAlien() {
+        System.out.println("calcFigthingAlien");
+        
+        /*****************************
+         *  Test case #1
+         */
+        System.out.println("\tTest case #1");
+        
+        //input values for test case #1
+        double alienAttack = 3.0;
+        double playerLife = 30.0;
+        
+        double expResult = 27.0;
+
+        //created instance of AlienControl class
+        AlienControl instance = new AlienControl();
+        
+        double result = instance.calcFigthingAlien(alienAttack, playerLife);
+        assertEquals(expResult, result, 0.0001);
+        
+        // Test case 2
+        System.out.println("\tTest case #2");
+        
+        alienAttack = -2.0;
+        playerLife = 10.0;
+        
+        expResult = -1;
+        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        assertEquals(expResult, result, 0.0);
+        
+        // Test case 3
+        System.out.println("\tTest case #3");
+        
+        alienAttack = 4.0;
+        playerLife = -2.0;
+        
+        expResult = -1;
+        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        assertEquals(expResult, result, 0.0);
+        
+        // Test case 4
+        System.out.println("\tTest case #4");
+        
+        alienAttack = 10.0;
+        playerLife = 20.0;
+        
+        expResult = -1;
+        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        assertEquals(expResult, result, 0.0);
+        
+        // Test case 5
+        System.out.println("\tTest case #5");
+        
+        alienAttack = 5.0;
+        playerLife = 4.0;
+        
+        expResult = 0;
+        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        assertEquals(expResult, result, 0.0);
+        
+        // Test case 6
+        System.out.println("\tTest case #6");
+        
+        alienAttack = 0.0;
+        playerLife = 12.0;
+        
+        expResult = 12;
+        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        assertEquals(expResult, result, 0.0);
+        
+        // Test case 7
+        System.out.println("\tTest case #7");
+        
+        alienAttack = 4.0;
+        playerLife = 22.0;
+        
+        expResult = 18;
+        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        assertEquals(expResult, result, 0.0);
+    }
     
 }
