@@ -14,6 +14,7 @@ import byui.cit260.moonJumpers.model.Scene;
 import byui.cit260.moonJumpers.model.Actor;
 import byui.cit260.moonJumpers.model.Game;
 import byui.cit260.moonJumpers.model.Weapon;
+import byui.cit260.moonJumpers.view.StartProgramView;
 
 
 /**
@@ -26,6 +27,12 @@ public class MoonJumpers {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+        
+        
+        
        Player playerOne = new Player();
        
        playerOne.setName("Eddie Pincay");
