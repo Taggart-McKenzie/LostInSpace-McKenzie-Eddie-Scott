@@ -6,22 +6,25 @@
 package byui.cit260.moonJumpers.control;
 
 import byui.cit260.moonJumpers.model.Player;
+import moonjumpers.MoonJumpers;
 
 /**
  *
  * @author Eddie Pincay
  */
 public class GameControl {
-
-    public static Player createPlayer(String playersName) {
-        System.out.println("\n*** createPlayer() function called ***");
-        return new Player();
-    }
-    public void startNewGame(){
-        
-    }
-    public boolean saveGame(double player, double weapon, double fuel, double location){
-        return player > 0;
-    }
     
-}
+    public static Player createPlayer(String name){
+        
+            if (name == null) {
+                return null;
+            }
+            
+            Player player = new Player();
+            player.setName(name);
+            
+            MoonJumpers.setPlayer(player);
+            
+            return player;
+        }
+    }
