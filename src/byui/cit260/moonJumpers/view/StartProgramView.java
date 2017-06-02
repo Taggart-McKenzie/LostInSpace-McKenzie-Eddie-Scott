@@ -5,6 +5,8 @@
  */
 package byui.cit260.moonJumpers.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author sshipp57
@@ -63,15 +65,6 @@ public class StartProgramView {
     }
 
     public void displayStartProgramView() {
-        /*
-        do
-            Prompt for and get the input value
-            if (value == “Q”) then
-                return
-
-            do requested action and display the next view
-            while the view is not done
-        */
         
         boolean done = false;
         do {
@@ -85,8 +78,26 @@ public class StartProgramView {
     }
 
     private String getPlayersName() {
-        System.out.println("\n*** getPlayersName() called ***");
-        return "Joe";
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid) {
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if (value.length() < 1) {
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+            }
+        
+            break;
+        
+        }
+        
+        return value;
     }
 
     private boolean doAction(String playersName) {
