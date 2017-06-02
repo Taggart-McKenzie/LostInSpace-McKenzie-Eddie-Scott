@@ -12,31 +12,31 @@ import java.util.Scanner;
  * @author sshipp57
  */
 public class HelpMenuView {
+
     private String menu;
 
     public HelpMenuView() {
         this.menu = "\n"
-              + "\n-------------------------------------"
-              + "\n| Help Menu                         |"
-              + "\n-------------------------------------"
-              + "\n G - What is the goal of the game?   "
-              + "\n M - How to Move                     "
-              + "\n F - View Fuel Percentage            "
-              + "\n Q - Quit                            ";
+                + "\n-------------------------------------"
+                + "\n| Help Menu                         |"
+                + "\n-------------------------------------"
+                + "\n G - What is the goal of the game?   "
+                + "\n M - How to Move                     "
+                + "\n F - View Fuel Percentage            "
+                + "\n Q - Quit                            ";
     }
 
     public void displayHelpMenuView() {
- boolean done = false;
+        boolean done = false;
         do {
-        
-              String menuOption = this.getMenuOption();
-              if (menuOption.toUpperCase().equals("Q"))
-                  return;
-              
-              done = this.doAction(menuOption);
-        
-        
-        
+
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q")) {
+                return;
+            }
+
+            done = this.doAction(menuOption);
+
         } while (!done);
     }
 
@@ -44,29 +44,29 @@ public class HelpMenuView {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
-        
+
         while (!valid) {
             System.out.println("\nEnter a Help Menu Option" + this.menu);
-            
+
             value = keyboard.nextLine();
             value = value.trim();
-            
+
             if (value.length() < 1) {
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
             }
-        
+
             break;
-        
+
         }
-        
+
         return value;
     }
 
     public boolean doAction(String choice) {
-        
+
         choice = choice.toUpperCase();
-        
+
         switch (choice) {
             case "G":
                 this.goalGame();
@@ -82,7 +82,7 @@ public class HelpMenuView {
                 break;
         }
         return false;
-        
+
     }
 
     private void goalGame() {
@@ -97,4 +97,4 @@ public class HelpMenuView {
         System.out.println("\n*** Calls fuelPercentage() function ***");
     }
 
-    }
+}
