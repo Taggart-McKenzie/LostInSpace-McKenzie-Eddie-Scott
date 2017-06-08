@@ -19,7 +19,7 @@ public class TravelControl{
         random = newRandom;
     }
     
-    public double calcGatherFuel(double userInput, double surfaceHardness){
+    public static double calcGatherFuel(double userInput, double surfaceHardness){
         
         if (userInput < 1 || userInput > 10) { //must be between 1-10
             return -1;
