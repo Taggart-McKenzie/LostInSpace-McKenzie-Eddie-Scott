@@ -90,11 +90,11 @@ public class MainMenuView {
 
     private void startNewGame() {
         //create a new game
-        GameControl.createNewGame(MoonJumpers.getPlayer());
+        //GameControl.createNewGame(MoonJumpers.getPlayer());
 
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
     }
 
     private void startExistingGame() {
