@@ -23,7 +23,8 @@ public class HelpMenuView {
                 + "\n G - What is the goal of the game?   "
                 + "\n M - How to Move                     "
                 + "\n F - View Fuel Percentage            "
-                + "\n T - Travel Menu"
+                + "\n T - Travel Menu                     "
+                + "\n R - Running Away from the Alien     "
                 + "\n Q - Quit                            ";
     }
 
@@ -80,6 +81,8 @@ public class HelpMenuView {
                 break;
             case "T":
                 this.travelMenu();
+            case "R":
+                this.runAway();
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -104,6 +107,12 @@ public class HelpMenuView {
         TravelMenuView travelMenuView = new TravelMenuView();
 
         travelMenuView.displayTravelMenuView();
+    }
+
+    private void runAway() {
+        RunningAwayView runningAwayView = new RunningAwayView();
+        
+        runningAwayView.displayRunningAwayView();
     }
 
 }
