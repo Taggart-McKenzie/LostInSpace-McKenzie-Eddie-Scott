@@ -11,23 +11,24 @@ import java.util.Scanner;
  *
  * @author sshipp57
  */
-public class HelpMenuView {
+public class TravelMenuView {
 
     private String menu;
 
-    public HelpMenuView() {
+    public TravelMenuView() {
         this.menu = "\n"
                 + "\n-------------------------------------"
-                + "\n| Help Menu                         |"
+                + "\n| Where would you like to travel?   |"
                 + "\n-------------------------------------"
-                + "\n G - What is the goal of the game?   "
-                + "\n M - How to Move                     "
-                + "\n F - View Fuel Percentage            "
-                + "\n T - Travel Menu"
+                + "\n J - Jupiter                         "
+                + "\n E - Europa                          "
+                + "\n G - Ganymede                        "
+                + "\n C - Callisto                        "
                 + "\n Q - Quit                            ";
     }
 
-    public void displayHelpMenuView() {
+
+    public void displayTravelMenuView() {
         boolean done = false;
         do {
 
@@ -47,7 +48,7 @@ public class HelpMenuView {
         boolean valid = false;
 
         while (!valid) {
-            System.out.println("\nEnter a Help Menu Option" + this.menu);
+            System.out.println("\nEnter a Travel Menu Option" + this.menu);
 
             value = keyboard.nextLine();
             value = value.trim();
@@ -64,22 +65,21 @@ public class HelpMenuView {
         return value;
     }
 
-    public boolean doAction(String choice) {
-
+    private boolean doAction(String choice) {
         choice = choice.toUpperCase();
 
         switch (choice) {
+            case "J":
+                this.jupiter();
+                break;
+            case "E":
+                this.europa();
+                break;
             case "G":
-                this.goalGame();
+                this.ganymede();
                 break;
-            case "M":
-                this.howMove();
-                break;
-            case "F":
-                this.fuelPercentage();
-                break;
-            case "T":
-                this.travelMenu();
+            case "C":
+                this.callisto();
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -88,22 +88,21 @@ public class HelpMenuView {
 
     }
 
-    private void goalGame() {
-        System.out.println("\n*** Calls goalGame() function ***");
+    private void jupiter() {
+        System.out.println("\n*** Welcome To The Planet Jupiter ***");
     }
 
-    private void howMove() {
-        System.out.println("\n*** Calls howMove() function ***");
+    private void europa() {
+        System.out.println("\n*** Welcome To The Moon Europa ***");
     }
 
-    private void fuelPercentage() {
-        System.out.println("\n*** Calls fuelPercentage() function ***");
+    private void ganymede() {
+        System.out.println("\n*** Welcome To The Moon Ganymede ***");
+
     }
 
-    private void travelMenu() {
-        TravelMenuView travelMenuView = new TravelMenuView();
+    private void callisto() {
+        System.out.println("\n*** Welcome To The Moon Callisto ***");
 
-        travelMenuView.displayTravelMenuView();
     }
-
 }
