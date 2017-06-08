@@ -61,20 +61,25 @@ public class RunningAwayView {
     private boolean doAction(String runningAwayOption) {
         double finalVelocity = Double.parseDouble(runningAwayOption);
 
+        this.runAway = "to _ m/s";
+        String secondInput = this.getRunnnigAwayOption();
+        double initialVelocity = Double.parseDouble(secondInput);
+
         this.runAway = "in _ seconds    "
                 + "\nHow fast does the astronaut need to accelerate away from danger?";
         String thirdInput = this.getRunnnigAwayOption();
         double time = Double.parseDouble(thirdInput);
 
-        double result = AlienControl.calcRunningAway(finalVelocity, finalVelocity, time);
+        double result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);
 
         if (result < 0) {
-            System.out.println("\nOops! Something went wrong");
+            System.out.println("\nYou were caught by the alien");
             return false;
         } else {
             System.out.println("\nWow! You accelerated away from the alien"
                     + "\nfast enough. You are safe!");
         }
+
         return true;
 
     }
