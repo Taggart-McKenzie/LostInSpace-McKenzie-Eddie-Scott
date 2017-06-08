@@ -102,7 +102,9 @@ public class HelpMenuView {
     }
 
     private void fuelPercentage() {
-        System.out.println("\n*** Calls fuelPercentage() function ***");
+        FuelPercentageView fuelPercentageView = new FuelPercentageView();
+        
+        fuelPercentageView.displayFuelPercentageView();
     }
 
     private void travelMenu() {
