@@ -109,6 +109,8 @@ class GameMenuView {
     }
     private void liftOff() {
         System.out.println("***lift off function***");
+        LiftOffView liftOffView = new LiftOffView();
+        liftOffView.displayLiftOffView();
         
     }
     private void gatherFuel() {
