@@ -96,7 +96,9 @@ public class HelpMenuView {
     }
 
     private void howMove() {
-        System.out.println("\n*** Calls howMove() function ***");
+        MoveMenuView moveMenuView = new MoveMenuView();
+
+        moveMenuView.displayMoveMenuView();
     }
 
     private void fuelPercentage() {
