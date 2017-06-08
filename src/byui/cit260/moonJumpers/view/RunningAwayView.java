@@ -18,7 +18,7 @@ public class RunningAwayView {
 
     public RunningAwayView() {
         this.runAway = "\nThe astronaut accelerate away                        "
-                + "\nfrom the monster from _m/s";
+                + "\nfrom the monster from _ m/s";
 
     }
 
