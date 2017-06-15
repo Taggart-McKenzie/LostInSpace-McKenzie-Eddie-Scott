@@ -12,54 +12,22 @@ import java.util.Scanner;
  *
  * @author Eddie Pincay
  */
-public class FuelPercentageView {
+public class FuelPercentageView extends View {
+
     private String fuelPercentage;
     
+    
     public FuelPercentageView() {
-        this.fuelPercentage = "\nWhat is your Fuel            ";
+        super( "\nWhat is your Fuel            ");
     }
     
-    void displayFuelPercentageView() {
-
-        boolean done = false;
-        do {
-
-            String fuelPercentageOption = this.getFuelPercentageOption();
-            if (fuelPercentageOption.toUpperCase().equals("Q")) {
-                return;
-            }
-
-            done = this.doAction(fuelPercentageOption);
-        } while (!done);
-
-    }
-
-    private String getFuelPercentageOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\n" + this.fuelPercentage);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvaild value: value can not be blank");
-                continue;
-            }
-
-            break;
-        }
-        return value;
-    }
-
-    private boolean doAction(String fuelPercentageOption) {
+    
+    @Override
+    public boolean doAction(String fuelPercentageOption) {
         double userInput = Double.parseDouble(fuelPercentageOption);
 
         this.fuelPercentage = "Surface Hardness : ";
-        String secondInput = this.getFuelPercentageOption();
+        String secondInput = this.getInput();
         double surfaceHardness = Double.parseDouble(secondInput);
 
         double result = TravelControl.calcGatherFuel(userInput, surfaceHardness);

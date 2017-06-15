@@ -114,11 +114,12 @@ class GameMenuView {
         
     }
     private void gatherFuel() {
-        System.out.println("***gather fuel function***");
+        System.out.println("***gatherFuel function***");
     }
 
     private void fuelPercentage() {
-        System.out.println("***fuel percentage functions***");
+        FuelPercentageView fuelPercentageView = new FuelPercentageView();
+        fuelPercentageView.display();
     }
     private void currentWeapon() {
         //ItemMenuView itemMenuView = new ItemMenuView();
