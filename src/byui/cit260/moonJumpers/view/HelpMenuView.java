@@ -11,12 +11,10 @@ import java.util.Scanner;
  *
  * @author sshipp57
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
-    private String menu;
-
-    public HelpMenuView() {
-        this.menu = "\n"
+        public HelpMenuView() {
+        super("\n"
                 + "\n-------------------------------------"
                 + "\n| Help Menu                         |"
                 + "\n-------------------------------------"
@@ -25,46 +23,11 @@ public class HelpMenuView {
                 + "\n F - View Fuel Percentage            "
                 + "\n T - Travel Menu                     "
                 + "\n R - Running Away from the Alien     "
-                + "\n Q - Quit                            ";
+                + "\n Q - Quit                            ");
     }
 
-    public void displayHelpMenuView() {
-        boolean done = false;
-        do {
-
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
-
-            done = this.doAction(menuOption);
-
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\nEnter a Help Menu Option" + this.menu);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-
-            break;
-
-        }
-
-        return value;
-    }
-
+    
+    @Override
     public boolean doAction(String choice) {
 
         choice = choice.toUpperCase();
