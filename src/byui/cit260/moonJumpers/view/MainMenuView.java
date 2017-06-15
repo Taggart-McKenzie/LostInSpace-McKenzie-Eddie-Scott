@@ -13,59 +13,20 @@ import moonjumpers.MoonJumpers;
  *
  * @author sshipp57
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
-    private String menu;
-
-    public MainMenuView() {
-        this.menu = "\n"
+    public MainMenuView(){
+        super(  "\n"
                 + "\n-------------------------------------"
                 + "\n| Main Menu                         |"
                 + "\n-------------------------------------"
                 + "\n N - Start New Game                  "
                 + "\n R - Restore Existing Game           "
                 + "\n H - Get Help on How to Play the Game"
-                + "\n Q - Quit                            ";
+                + "\n Q - Quit                            ");
     }
-
-    public void displayMainMenu() {
-
-        boolean done = false;
-        do {
-
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
-
-            done = this.doAction(menuOption);
-
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\nEnter a Menu Option" + this.menu);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-
-            break;
-
-        }
-
-        return value;
-    }
-
+    
+    @Override
     public boolean doAction(String choice) {
 
         choice = choice.toUpperCase();
