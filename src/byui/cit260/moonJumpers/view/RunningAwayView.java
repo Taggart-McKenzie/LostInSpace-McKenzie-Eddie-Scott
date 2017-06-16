@@ -14,8 +14,6 @@ import java.util.Scanner;
  */
 public class RunningAwayView extends View {
 
-    private String runAway;
-
     public RunningAwayView() {
         super("\nThe astronaut accelerate away                        "
                 + "\nfrom the monster from _ m/s");

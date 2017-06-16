@@ -14,9 +14,6 @@ import java.util.Scanner;
  */
 public class FuelPercentageView extends View {
 
-    private String fuelPercentage;
-    
-    
     public FuelPercentageView() {
         super( "\nWhat is your Fuel            ");
     }
