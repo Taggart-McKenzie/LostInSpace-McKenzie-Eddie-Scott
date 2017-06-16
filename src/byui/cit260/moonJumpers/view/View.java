@@ -46,7 +46,7 @@ public abstract class View implements ViewInterface {
         boolean valid = false;
 
         while (!valid) {
-            System.out.println("\nEnter a Menu Option" + this.displayMessage);
+            System.out.println(this.displayMessage);
 
             value = keyboard.nextLine();
             value = value.trim();
