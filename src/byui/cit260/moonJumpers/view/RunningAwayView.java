@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class RunningAwayView extends View {
 
-    private String runAway;
+    private String displayMessage;
 
     public RunningAwayView() {
         super("\nThe astronaut accelerate away                        "
@@ -27,11 +27,11 @@ public class RunningAwayView extends View {
     public boolean doAction(String runningAwayOption) {
         double finalVelocity = Double.parseDouble(runningAwayOption);
 
-        this.runAway = "to _ m/s";
+        this.displayMessage = "to _ m/s";
         String secondInput = this.getInput();
         double initialVelocity = Double.parseDouble(secondInput);
 
-        this.runAway = "in _ seconds    "
+        this.displayMessage = "in _ seconds    "
                 + "\nHow fast does the astronaut need to accelerate away from danger?";
         String thirdInput = this.getInput();
         double time = Double.parseDouble(thirdInput);
