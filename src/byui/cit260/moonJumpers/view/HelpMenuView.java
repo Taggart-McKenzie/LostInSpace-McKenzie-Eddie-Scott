@@ -73,7 +73,7 @@ public class HelpMenuView extends View {
     private void travelMenu() {
         TravelMenuView travelMenuView = new TravelMenuView();
 
-        travelMenuView.displayTravelMenuView();
+        travelMenuView.display();
     }
 
     private void runAway() {
