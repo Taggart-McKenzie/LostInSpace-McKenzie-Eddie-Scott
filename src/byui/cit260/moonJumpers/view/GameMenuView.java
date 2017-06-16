@@ -105,7 +105,7 @@ class GameMenuView {
     }
     private void travelMenu() {
         TravelMenuView travelMenuView = new TravelMenuView();
-        travelMenuView.displayTravelMenuView();
+        travelMenuView.display();
     }
     private void liftOff() {
         System.out.println("***lift off function***");

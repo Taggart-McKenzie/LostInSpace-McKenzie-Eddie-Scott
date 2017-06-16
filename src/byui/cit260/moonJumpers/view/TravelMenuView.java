@@ -11,12 +11,12 @@ import java.util.Scanner;
  *
  * @author sshipp57
  */
-public class TravelMenuView {
+public class TravelMenuView extends View{
 
     private String menu;
 
     public TravelMenuView() {
-        this.menu = "\n"
+        super( "\n"
                 + "\n-------------------------------------"
                 + "\n| Where would you like to travel?   |"
                 + "\n-------------------------------------"
@@ -24,48 +24,11 @@ public class TravelMenuView {
                 + "\n E - Europa                          "
                 + "\n G - Ganymede                        "
                 + "\n C - Callisto                        "
-                + "\n Q - Quit                            ";
+                + "\n Q - Quit                            ");
     }
 
-
-    public void displayTravelMenuView() {
-        boolean done = false;
-        do {
-
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
-
-            done = this.doAction(menuOption);
-
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\nEnter a Travel Menu Option" + this.menu);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-
-            break;
-
-        }
-
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
 
         switch (choice) {
