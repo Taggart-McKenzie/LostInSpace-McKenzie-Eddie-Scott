@@ -13,8 +13,6 @@ import java.util.Scanner;
  */
 public class TravelMenuView extends View{
 
-    private String menu;
-
     public TravelMenuView() {
         super( "\n"
                 + "\n-------------------------------------"
