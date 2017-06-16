@@ -11,11 +11,11 @@ import java.util.Scanner;
  *
  * @author Eddie Pincay
  */
-public class MoveMenuView {
+public class MoveMenuView extends View {
     private String menu;
 
     public MoveMenuView() {
-        this.menu ="\n"
+        super("\n"
                 + "\n-------------------------------------"
                 + "\n| Move Menu                         |"
                 + "\n-------------------------------------\n"
@@ -24,45 +24,10 @@ public class MoveMenuView {
                 + "S - Move South\n"
                 + "W - Move West\n"
                 + "V - View Map\n"
-                + "Q - Quit\n";
+                + "Q - Quit\n");
     }
 
-    public void displayMoveMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
-            
-            done = this.doAction(menuOption);
-
-        } while (!done);
-    }
-    
-     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\nEnter a Move Menu Option" + this.menu);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-
-            break;
-
-        }
-
-        return value;
-    }
-     
+    @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
