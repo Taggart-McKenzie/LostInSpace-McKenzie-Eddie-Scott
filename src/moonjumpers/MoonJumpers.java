@@ -48,7 +48,7 @@ public class MoonJumpers {
     public static void main(String[] args) {
 
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
 
         
     }

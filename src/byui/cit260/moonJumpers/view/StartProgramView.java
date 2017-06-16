@@ -19,16 +19,7 @@ public class StartProgramView extends View {
 
     public StartProgramView() {
 
-        this.promptMessage = "\nPlease enter your name:";
-        // display the banner when view is created
-        this.displayBanner();
-
-    }
-
-    private void displayBanner() {
-
-        System.out.println(
-                "\n******************************************************************"
+        super( "\n******************************************************************"
                 + "\n* Lost in Space is a text-based role-playing game where the      *"
                 + "\n* player of the game has found himself lost in space and         *"
                 + "\n* must use the clues and resources provided to him as he         *"
@@ -63,46 +54,21 @@ public class StartProgramView extends View {
                 + "\n* land the spaceship safely back on Earth.                       *"
                 + "\n*                                                                *"
                 + "\n******************************************************************"
-        );
+                + "\nPlease enter your name:");
+        // display the banner when view is created
+        //this.displayBanner();
+
     }
 
-    public void displayStartProgramView() {
+    //private void displayBanner() {
 
-        boolean done = false;
-        do {
+        //System.out.println(
+                
+        //);
+    
 
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q")) {
-                return;
-            }
-
-            done = this.doAction(playersName);
-        } while (!done);
-    }
-
-    private String getPlayersName() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-
-            break;
-
-        }
-
-        return value;
-    }
-
+    
+    @Override
     public boolean doAction(String playersName) {
 
         if (playersName.length() < 2) {
