@@ -23,8 +23,8 @@ public class FuelPercentageView extends View {
     public boolean doAction(String fuelPercentageOption) {
         double userInput = Double.parseDouble(fuelPercentageOption);
 
-        this.displayMessage = "Surface Hardness : ";
-        String secondInput = this.getInput();
+        displayMessage = "Surface Hardness : ";
+        String secondInput = getInput();
         double surfaceHardness = Double.parseDouble(secondInput);
 
         double result = TravelControl.calcGatherFuel(userInput, surfaceHardness);

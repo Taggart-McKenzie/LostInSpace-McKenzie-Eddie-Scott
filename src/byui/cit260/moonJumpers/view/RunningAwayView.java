@@ -25,13 +25,13 @@ public class RunningAwayView extends View {
     public boolean doAction(String runningAwayOption) {
         double finalVelocity = Double.parseDouble(runningAwayOption);
 
-        this.displayMessage = "to _ m/s";
-        String secondInput = this.getInput();
+        displayMessage = "to _ m/s";
+        String secondInput = getInput();
         double initialVelocity = Double.parseDouble(secondInput);
 
-        this.displayMessage = "in _ seconds    "
+        displayMessage = "in _ seconds    "
                 + "\nHow fast does the astronaut need to accelerate away from danger?";
-        String thirdInput = this.getInput();
+        String thirdInput = getInput();
         double time = Double.parseDouble(thirdInput);
 
         double result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);
