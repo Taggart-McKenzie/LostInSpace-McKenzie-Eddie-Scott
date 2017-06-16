@@ -79,7 +79,7 @@ public class HelpMenuView extends View {
     private void runAway() {
         RunningAwayView runningAwayView = new RunningAwayView();
         
-        runningAwayView.displayRunningAwayView();
+        runningAwayView.display();
     }
 
 }
