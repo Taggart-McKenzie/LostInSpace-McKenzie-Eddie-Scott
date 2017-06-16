@@ -12,62 +12,28 @@ import java.util.Scanner;
  *
  * @author sshipp57
  */
-public class RunningAwayView {
+public class RunningAwayView extends View {
 
     private String runAway;
 
     public RunningAwayView() {
-        this.runAway = "\nThe astronaut accelerate away                        "
-                + "\nfrom the monster from _ m/s";
+        super("\nThe astronaut accelerate away                        "
+                + "\nfrom the monster from _ m/s");
 
     }
 
-    void displayRunningAwayView() {
-
-        boolean done = false;
-        do {
-
-            String runningAwayOption = this.getRunnnigAwayOption();
-            if (runningAwayOption.toUpperCase().equals("Q")) {
-                return;
-            }
-
-            done = this.doAction(runningAwayOption);
-        } while (!done);
-
-    }
-
-    private String getRunnnigAwayOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\n" + this.runAway);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvaild value: value can not be blank");
-                continue;
-            }
-
-            break;
-        }
-        return value;
-    }
-
-    private boolean doAction(String runningAwayOption) {
+    
+    @Override
+    public boolean doAction(String runningAwayOption) {
         double finalVelocity = Double.parseDouble(runningAwayOption);
 
         this.runAway = "to _ m/s";
-        String secondInput = this.getRunnnigAwayOption();
+        String secondInput = this.getInput();
         double initialVelocity = Double.parseDouble(secondInput);
 
         this.runAway = "in _ seconds    "
                 + "\nHow fast does the astronaut need to accelerate away from danger?";
-        String thirdInput = this.getRunnnigAwayOption();
+        String thirdInput = this.getInput();
         double time = Double.parseDouble(thirdInput);
 
         double result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);

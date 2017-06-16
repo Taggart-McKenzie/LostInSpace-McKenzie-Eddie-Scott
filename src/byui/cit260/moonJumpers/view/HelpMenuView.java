@@ -61,7 +61,7 @@ public class HelpMenuView extends View {
     private void howMove() {
         MoveMenuView moveMenuView = new MoveMenuView();
 
-        moveMenuView.displayMoveMenuView();
+        moveMenuView.display();
     }
 
     private void fuelPercentage() {
@@ -79,7 +79,7 @@ public class HelpMenuView extends View {
     private void runAway() {
         RunningAwayView runningAwayView = new RunningAwayView();
         
-        runningAwayView.displayRunningAwayView();
+        runningAwayView.display();
     }
 
 }
