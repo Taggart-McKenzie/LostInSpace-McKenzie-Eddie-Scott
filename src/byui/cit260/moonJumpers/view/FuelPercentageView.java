@@ -26,7 +26,7 @@ public class FuelPercentageView extends View {
     public boolean doAction(String fuelPercentageOption) {
         double userInput = Double.parseDouble(fuelPercentageOption);
 
-        this.fuelPercentage = "Surface Hardness : ";
+        this.displayMessage = "Surface Hardness : ";
         String secondInput = this.getInput();
         double surfaceHardness = Double.parseDouble(secondInput);
 
