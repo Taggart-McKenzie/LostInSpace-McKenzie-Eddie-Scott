@@ -67,7 +67,7 @@ public class HelpMenuView extends View {
     private void fuelPercentage() {
         FuelPercentageView fuelPercentageView = new FuelPercentageView();
         
-        fuelPercentageView.displayFuelPercentageView();
+        fuelPercentageView.display();
     }
 
     private void travelMenu() {

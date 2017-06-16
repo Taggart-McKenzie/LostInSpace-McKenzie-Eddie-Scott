@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author sshipp57
  */
-public class StartProgramView {
+public class StartProgramView extends View {
 
     private String promptMessage;
 
@@ -103,7 +103,7 @@ public class StartProgramView {
         return value;
     }
 
-    private boolean doAction(String playersName) {
+    public boolean doAction(String playersName) {
 
         if (playersName.length() < 2) {
             System.out.println("\nInvalid players name: "
