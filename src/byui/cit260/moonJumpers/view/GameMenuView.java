@@ -118,7 +118,8 @@ class GameMenuView {
         
     }
     private void gatherFuel() {
-        System.out.println("***gatherFuel function***");
+        GatherFuelView gatherFuelView = new GatherFuelView();
+        gatherFuelView.display();
     }
 
     private void fuelPercentage() {
