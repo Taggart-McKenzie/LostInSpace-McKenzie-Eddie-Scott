@@ -130,8 +130,8 @@ public class AlienControlTest {
      * Test of calcFigthingAlien method, of class AlienControl.
      */
     @Test
-    public void testCalcFigthingAlien() {
-        System.out.println("calcFigthingAlien");
+    public void testCalcFightingAlien() {
+        System.out.println("calcFightingAlien");
         
         /*****************************
          *  Test case #1
@@ -147,7 +147,7 @@ public class AlienControlTest {
         //created instance of AlienControl class
         AlienControl instance = new AlienControl();
         
-        double result = instance.calcFigthingAlien(alienAttack, playerLife);
+        double result = instance.calcFightingAlien(alienAttack, playerLife);
         assertEquals(expResult, result, 0.0001);
         
         // Test case 2
@@ -157,7 +157,7 @@ public class AlienControlTest {
         playerLife = 10.0;
         
         expResult = -1;
-        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        result = instance.calcFightingAlien(alienAttack, playerLife);
         assertEquals(expResult, result, 0.0);
         
         // Test case 3
@@ -167,7 +167,7 @@ public class AlienControlTest {
         playerLife = -2.0;
         
         expResult = -1;
-        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        result = instance.calcFightingAlien(alienAttack, playerLife);
         assertEquals(expResult, result, 0.0);
         
         // Test case 4
@@ -177,7 +177,7 @@ public class AlienControlTest {
         playerLife = 20.0;
         
         expResult = -1;
-        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        result = instance.calcFightingAlien(alienAttack, playerLife);
         assertEquals(expResult, result, 0.0);
         
         // Test case 5
@@ -187,7 +187,7 @@ public class AlienControlTest {
         playerLife = 4.0;
         
         expResult = 0;
-        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        result = instance.calcFightingAlien(alienAttack, playerLife);
         assertEquals(expResult, result, 0.0);
         
         // Test case 6
@@ -197,7 +197,7 @@ public class AlienControlTest {
         playerLife = 12.0;
         
         expResult = 12;
-        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        result = instance.calcFightingAlien(alienAttack, playerLife);
         assertEquals(expResult, result, 0.0);
         
         // Test case 7
@@ -207,7 +207,7 @@ public class AlienControlTest {
         playerLife = 22.0;
         
         expResult = 18;
-        result = instance.calcFigthingAlien(alienAttack, playerLife);
+        result = instance.calcFightingAlien(alienAttack, playerLife);
         assertEquals(expResult, result, 0.0);
     }
     

@@ -15,6 +15,7 @@ import java.util.Objects;
 public class Player implements Serializable{
     
     // class instance variables
+    //lifespan of name and bestTime begin here
     private String name;
     private double bestTime;
 
@@ -22,17 +23,17 @@ public class Player implements Serializable{
     }
 
     @Override
-    public String toString() {
+    public String toString() {//scope of variable name and bestTime still available here
         return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
     
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 7; //lifespan  of hash begins
         hash = 97 * hash + Objects.hashCode(this.name);
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
-    }
+    } //lifespan of hash ends
 
     @Override
     public boolean equals(Object obj) {

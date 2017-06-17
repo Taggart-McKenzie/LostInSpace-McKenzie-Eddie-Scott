@@ -19,15 +19,13 @@ public class TravelControlTest {
     @Test
     public void testCalcGatherFuel() {
         
-        System.out.println("calcGatherFuel");
-        
+        System.out.println("calcGatherFuel");       
         System.out.println("\tTest case #1");
-        
         //input values for test case #1
         double userInput = 5;
         double surfaceHardness = 7;
         
-        //create instance of InventoryControl class
+        //create instance of Travel Control class
         TravelControl instance = new TravelControl();
         
         RandomMock random = new RandomMock(
