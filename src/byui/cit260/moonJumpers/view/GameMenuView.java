@@ -127,8 +127,8 @@ class GameMenuView {
         fuelPercentageView.display();
     }
     private void currentWeapon() {
-        //ItemMenuView itemMenuView = new ItemMenuView();
-        //itemMenuView.displayItemMenuView();
+        CurrentWeaponView currentWeaponView = new CurrentWeaponView();
+        currentWeaponView.display();
     }
     private void saveGame() {
         System.out.println("***this function will save the game***");
