@@ -25,6 +25,7 @@ class GameMenuView {
                 + "\n G - Gather Fuel                     "
                 + "\n F - View Fuel Percentage            "
                 + "\n C - Current Weapon                  "
+                + "\n A - Fight Alien                     "
                 + "\n H - Help                            "
                 + "\n Q - Quit                            ";
     }
@@ -87,6 +88,9 @@ class GameMenuView {
             case "C"://current weapons available to use
                 this.currentWeapon();
                 break;
+            case "A":
+                this.FightAlien();
+                break;
             case "S"://save game to play in the future
                 this.saveGame();
                 break;
@@ -134,6 +138,11 @@ class GameMenuView {
     }
     private void quit() {
         //quit function called in the do while statement above
+    }
+
+    private void FightAlien() {
+        FightingAlienView fightAlienView = new FightingAlienView();
+        fightAlienView.display();
     }
 
 }
