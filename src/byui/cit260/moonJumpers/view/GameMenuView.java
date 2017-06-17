@@ -141,7 +141,7 @@ class GameMenuView {
     }
 
     private void FightAlien() {
-        FightingAlienView fightAlienView = new FightingAlienView();
+        FightAlienView fightAlienView = new FightAlienView();
         fightAlienView.display();
     }
 
