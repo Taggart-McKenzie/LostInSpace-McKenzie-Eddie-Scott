@@ -12,12 +12,16 @@ import java.util.Objects;
  *
  * @author mckenzietaggart
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
     
     //class instance variables
     private double totalTime;
     private double numberOfPeople;
     private String attribute;
+    
+    //cardinality - only one player in each game
+    private Player player;
+    
     
     //defualt constructor
     public Game() {
@@ -47,6 +51,16 @@ public class Game implements Serializable{
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
     
     //equals and hashCode
     @Override
