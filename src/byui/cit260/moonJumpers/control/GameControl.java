@@ -44,10 +44,10 @@ public class GameControl {
         Item[] itemList = GameControl.createItemList();
         game.setInventory(itemList);
         
-        Weapon weapon = new Weapon();
-        game.setWeapon(weapon);
+        Weapon weapon;
+        game.setWeapon(Weapon.Knife);
         
-        Actor actor = new Actor();
+        Actor actor;
         game.setActor(Actor.Player);
       
         Map map = MapControl.createMap();
@@ -65,37 +65,37 @@ public class GameControl {
     private static Item[] createItemList() {
         Item[] inventory = new Item[6];
         
-        Item water = new Item();
+        Item water;
         water.setDescription("Water");
         water.setQuantityInStock(0);
         water.setRequiredAmount(0);
         inventory[Item.water.ordinal()] = water;
         
-        Item metal = new Item();
+        Item metal;
         metal.setDescription("Metal");
         metal.setQuantityInStock(0);
         metal.setRequiredAmount(0);
         inventory[Item.metal.ordinal()] = metal;
         
-        Item lantern = new Item();
+        Item lantern;
         lantern.setDescription("Lantern");
         lantern.setQuantityInStock(0);
         lantern.setRequiredAmount(0);
         inventory[Item.lantern.ordinal()] = lantern;
         
-        Item food = new Item();
+        Item food;
         food.setDescription("Food");
         food.setQuantityInStock(0);
         food.setRequiredAmount(0);
         inventory[Item.food.ordinal()] = food;
         
-        Item fuel = new Item();
+        Item fuel;
         fuel.setDescription("Fuel");
         fuel.setQuantityInStock(0);
         fuel.setRequiredAmount(0);
         inventory[Item.fuel.ordinal()] = fuel;
         
-        Item spacecraft = new Item();
+        Item spacecraft;
         spacecraft.setDescription("Spacecraft");
         spacecraft.setQuantityInStock(0);
         spacecraft.setRequiredAmount(0);
