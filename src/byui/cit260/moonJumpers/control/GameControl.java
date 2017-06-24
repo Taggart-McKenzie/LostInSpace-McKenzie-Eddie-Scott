@@ -5,10 +5,12 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.model.Actor;
 import byui.cit260.moonJumpers.model.Game;
 import byui.cit260.moonJumpers.model.Item;
 import byui.cit260.moonJumpers.model.Map;
 import byui.cit260.moonJumpers.model.Player;
+import byui.cit260.moonJumpers.model.Weapon;
 import moonjumpers.MoonJumpers;
 
 /**
@@ -42,6 +44,12 @@ public class GameControl {
         Item[] itemList = GameControl.createItemList();
         game.setInventory(itemList);
         
+        Weapon weapon = new Weapon();
+        game.setWeapon(weapon);
+        
+        Actor actor = new Actor();
+        game.setActor(Actor.Player);
+      
         Map map = MapControl.createMap();
         game.setMap(map);
         
