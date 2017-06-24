@@ -114,32 +114,27 @@ public class GameControl {
         
         Weapon stir;
         stir.setDescription("Stir");
-        stir.setQuantityInStock(0);
-        stir.setRequiredAmount(0);
+        stir.setStrength(0);
         weapons[Weapon.stir.ordinal()] = stir;
         
         Weapon magneticweapon;
         magneticweapon.setDescription("Magnetic Weapon");
-        magneticweapon.setQuantityInStock(0);
-        magneticweapon.setRequiredAmount(0);
+        magneticweapon.stir.setStrength(0);
         weapons[Weapon.magneticweapon.ordinal()] = magneticweapon;
         
         Weapon healingsolution;
         healingsolution.setDescription("Healing Solution");
-        healingsolution.setQuantityInStock(0);
-        healingsolution.setRequiredAmount(0);
+        healingsolution.stir.setStrength(0);
         weapons[Weapon.healingsolution.ordinal()] = healingsolution;
         
         Weapon knife;
         knife.setDescription("Knife");
-        knife.setQuantityInStock(0);
-        knife.setRequiredAmount(0);
+        knife.stir.setStrength(0);
         weapons[Weapon.knife.ordinal()] = knife;
         
         Weapon homepump;
         homepump.setDescription("Home Pump");
-        homepump.setQuantityInStock(0);
-        homepump.setRequiredAmount(0);
+        homepump.stir.setStrength(0);
         weapons[Weapon.homepump.ordinal()] = homepump;
         
             }
