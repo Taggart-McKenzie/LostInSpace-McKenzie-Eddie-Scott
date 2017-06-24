@@ -5,10 +5,20 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.model.Map;
+
 /**
  *
  * @author mckenzietaggart
  */
 public class MapControl {
+
+    static Map createMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void moveActorToStartingLocation(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

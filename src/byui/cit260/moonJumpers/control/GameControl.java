@@ -7,6 +7,7 @@ package byui.cit260.moonJumpers.control;
 
 import byui.cit260.moonJumpers.model.Game;
 import byui.cit260.moonJumpers.model.Item;
+import byui.cit260.moonJumpers.model.Map;
 import byui.cit260.moonJumpers.model.Player;
 import moonjumpers.MoonJumpers;
 
@@ -39,7 +40,12 @@ public class GameControl {
         
         //create the item list and save in the game
         Item[] itemList = GameControl.createItemList();
-        game.setItem(itemList);
+        game.setInventory(itemList);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        MapControl.moveActorToStartingLocation(map);
         
         
         
