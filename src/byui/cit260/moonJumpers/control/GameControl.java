@@ -119,22 +119,22 @@ public class GameControl {
         
         Weapon magneticweapon;
         magneticweapon.setDescription("Magnetic Weapon");
-        magneticweapon.stir.setStrength(0);
+        magneticweapon.setStrength(0);
         weapons[Weapon.magneticweapon.ordinal()] = magneticweapon;
         
         Weapon healingsolution;
         healingsolution.setDescription("Healing Solution");
-        healingsolution.stir.setStrength(0);
+        healingsolution.setStrength(0);
         weapons[Weapon.healingsolution.ordinal()] = healingsolution;
         
         Weapon knife;
         knife.setDescription("Knife");
-        knife.stir.setStrength(0);
+        knife.setStrength(0);
         weapons[Weapon.knife.ordinal()] = knife;
         
         Weapon homepump;
         homepump.setDescription("Home Pump");
-        homepump.stir.setStrength(0);
+        homepump.setStrength(0);
         weapons[Weapon.homepump.ordinal()] = homepump;
         
             }
