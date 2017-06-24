@@ -5,6 +5,8 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.model.Game;
+import byui.cit260.moonJumpers.model.Item;
 import byui.cit260.moonJumpers.model.Player;
 import moonjumpers.MoonJumpers;
 
@@ -29,6 +31,25 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Game game = new Game();//create new game
+        MoonJumpers.setCurrentGame(game);//save in Moon Jumpers
+        
+        game.setPlayer(player);//save player in game
+        
+        //create the item list and save in the game
+        Item[] itemList = GameControl.createItemList();
+        game.setItem(itemList);
+        
+        
+        
+        
+        
+        
+    }
+
+    private static Item[] createItemList() {
+        System.out.println("***called createItemList() in GameControl***");
+        return null;
     }
 }
