@@ -6,82 +6,45 @@
 package byui.cit260.moonJumpers.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Eddie Pincay
  */
-public class Item implements Serializable {
+public enum Item implements Serializable {
     
-    private String inventoryType;
-    private double quantityInStock;
-    private double requiredAmount;
-
-    public Item() {
-    }
+    Water("It is necessary to have energy on the planet"),
+    Metal("With this you can upgrade your ship."),
+    Lantern("This serves to illuminate dark places"),
+    Food("It is necessary to have energy"),
+    Fuel("Necesario para nuestra nave y para generar fuego."),
+    Spacecraft("It's necessary to travel between the planets.");
     
+    private final String description;
+    private final Double quantityInStock;
+    private final Double requiredAmount;
 
-    public String getInventoryType() {
-        return inventoryType;
+    Item(String description) {
+        this.description = description;
+        quantityInStock = new Double("5");
+        requiredAmount = new Double("2");
     }
 
-    public void setInventoryType(String inventoryType) {
-        this.inventoryType = inventoryType;
+    public String getDescription() {
+        return description;
     }
 
     public double getQuantityInStock() {
         return quantityInStock;
     }
 
-    public void setQuantityInStock(double quantityInStock) {
-        this.quantityInStock = quantityInStock;
-    }
-
     public double getRequiredAmount() {
         return requiredAmount;
     }
 
-    public void setRequiredAmount(double requiredAmount) {
-        this.requiredAmount = requiredAmount;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.inventoryType);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.quantityInStock) ^ (Double.doubleToLongBits(this.quantityInStock) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Item other = (Item) obj;
-        if (Double.doubleToLongBits(this.quantityInStock) != Double.doubleToLongBits(other.quantityInStock)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.requiredAmount) != Double.doubleToLongBits(other.requiredAmount)) {
-            return false;
-        }
-        if (!Objects.equals(this.inventoryType, other.inventoryType)) {
-            return false;
-        }
-        return true;
-    }
-
     @Override
     public String toString() {
-        return "Items{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+        return "Items{" + "description=" + description + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
     
     
