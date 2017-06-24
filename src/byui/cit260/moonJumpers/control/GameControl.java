@@ -19,6 +19,8 @@ import moonjumpers.MoonJumpers;
  */
 public class GameControl {
 
+    private static Weapon[] createWeaponList;
+
     public static Player createPlayer(String name) {
 
         if (name == null) {
@@ -44,8 +46,8 @@ public class GameControl {
         Item[] itemList = GameControl.createItemList();
         game.setInventory(itemList);
         
-        Weapon weapon;
-        game.setWeapon(Weapon.Knife);
+        Weapon[] weaponList = GameControl.createWeaponList();
+        game.setWeapon(weaponList);
         
         Actor actor;
         game.setActor(Actor.Player);
@@ -105,4 +107,40 @@ public class GameControl {
         
         return inventory;
     }
+
+    private static Weapon[] createWeaponList() {
+        
+        Weapon[] weapons = new Weapon[5];
+        
+        Weapon stir;
+        stir.setDescription("Stir");
+        stir.setQuantityInStock(0);
+        stir.setRequiredAmount(0);
+        weapons[Weapon.stir.ordinal()] = stir;
+        
+        Weapon magneticweapon;
+        magneticweapon.setDescription("Magnetic Weapon");
+        magneticweapon.setQuantityInStock(0);
+        magneticweapon.setRequiredAmount(0);
+        weapons[Weapon.magneticweapon.ordinal()] = magneticweapon;
+        
+        Weapon healingsolution;
+        healingsolution.setDescription("Healing Solution");
+        healingsolution.setQuantityInStock(0);
+        healingsolution.setRequiredAmount(0);
+        weapons[Weapon.healingsolution.ordinal()] = healingsolution;
+        
+        Weapon knife;
+        knife.setDescription("Knife");
+        knife.setQuantityInStock(0);
+        knife.setRequiredAmount(0);
+        weapons[Weapon.knife.ordinal()] = knife;
+        
+        Weapon homepump;
+        homepump.setDescription("Home Pump");
+        homepump.setQuantityInStock(0);
+        homepump.setRequiredAmount(0);
+        weapons[Weapon.homepump.ordinal()] = homepump;
+        
+            }
 }

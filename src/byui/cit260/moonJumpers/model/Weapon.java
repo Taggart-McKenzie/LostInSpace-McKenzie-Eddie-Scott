@@ -13,11 +13,11 @@ import java.io.Serializable;
  */
 public enum Weapon implements Serializable {
     
-    Stir("You have 3 shots to use them. Less 20 points"),
-    MagneticWeapon("It is damaged after 5 attempts. Less 15 points"),
-    HealingSolution("You have a chance to heal 50% of the total life and you have 2 times."),
-    Knife("You can lower only 10 points per attack."),
-    HomePump("Destroy a question");
+    stir("You have 3 shots to use them. Less 20 points"),
+    magneticweapon("It is damaged after 5 attempts. Less 15 points"),
+    healingsolution("You have a chance to heal 50% of the total life and you have 2 times."),
+    knife("You can lower only 10 points per attack."),
+    homepump("Destroy a question");
     
     private final String description;
     private final double strength;

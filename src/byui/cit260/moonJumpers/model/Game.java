@@ -21,12 +21,12 @@ public class Game implements Serializable {
     
     //cardinality - only one player in each game
     private Player player;
-    private Weapon weapon;
+    
     private Map map;
     private Actor actor;
     
     private Item[] inventory;
-    
+    private Weapon[] weapons;
     
     //defualt constructor
     public Game() {
@@ -73,14 +73,15 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public Weapon getWeapon() {
-        return weapon;
+    public Weapon[] getWeapon() {
+        return weapons;
     }
 
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
+    public void setWeapon(Weapon[] weapon) {
+        this.weapons = weapon;
     }
 
+    
     public Actor getActor() {
         return actor;
     }
