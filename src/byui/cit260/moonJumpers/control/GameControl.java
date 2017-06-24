@@ -63,7 +63,46 @@ public class GameControl {
     }
 
     private static Item[] createItemList() {
-        System.out.println("***called createItemList() in GameControl***");
-        return null;
+        Item[] inventory = new Item[6];
+        
+        Item water = new Item();
+        water.setDescription("Water");
+        water.setQuantityInStock(0);
+        water.setRequiredAmount(0);
+        inventory[0] = water;
+        
+        Item metal = new Item();
+        metal.setDescription("Metal");
+        metal.setQuantityInStock(0);
+        metal.setRequiredAmount(0);
+        inventory[1] = metal;
+        
+        Item lantern = new Item();
+        lantern.setDescription("Lantern");
+        lantern.setQuantityInStock(0);
+        lantern.setRequiredAmount(0);
+        inventory[2] = lantern;
+        
+        Item food = new Item();
+        food.setDescription("Food");
+        food.setQuantityInStock(0);
+        food.setRequiredAmount(0);
+        inventory[3] = food;
+        
+        Item fuel = new Item();
+        fuel.setDescription("Fuel");
+        fuel.setQuantityInStock(0);
+        fuel.setRequiredAmount(0);
+        inventory[4] = fuel;
+        
+        Item spacecraft = new Item();
+        spacecraft.setDescription("Spacecraft");
+        spacecraft.setQuantityInStock(0);
+        spacecraft.setRequiredAmount(0);
+        inventory[5] = spacecraft;
+        
+        
+        
+        return inventory;
     }
 }
