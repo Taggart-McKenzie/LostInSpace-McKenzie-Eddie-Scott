@@ -5,41 +5,27 @@
  */
 package byui.cit260.moonJumpers.model;
 
-import java.io.Serializable;
+
 
 /**
  *
  * @author mckenzietaggart
  */
-public enum Weapon implements Serializable {
+public enum Weapon{
     
-    stir("You have 3 shots to use them. Less 20 points"),
-    magneticweapon("It is damaged after 5 attempts. Less 15 points"),
-    healingsolution("You have a chance to heal 50% of the total life and you have 2 times."),
-    knife("You can lower only 10 points per attack."),
-    homepump("Destroy a question");
-    
-    private final String description;
-    private final double strength;
-    
-    Weapon(String description) {
-        this.description = description;
-        strength = new Double("10");
-    }
-    
-    public String getDescription() {
-        return description;
+    stir,
+    magneticweapon,
+    healingsolution,
+    knife,
+    homepump;
+
+    public void setDescription(String stir) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public double getStrength() {
-        return strength;
+    public void setStrength(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    //toString function
-
-    @Override
-    public String toString() {
-        return "Weapon{" + "description=" + description + ", strength=" + strength + '}';
-    }
+    
     
 }
