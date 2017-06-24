@@ -69,37 +69,37 @@ public class GameControl {
         water.setDescription("Water");
         water.setQuantityInStock(0);
         water.setRequiredAmount(0);
-        inventory[Item.Water.ordinal()] = water;
+        inventory[Item.water.ordinal()] = water;
         
         Item metal = new Item();
         metal.setDescription("Metal");
         metal.setQuantityInStock(0);
         metal.setRequiredAmount(0);
-        inventory[Item.Metal.ordinal()] = metal;
+        inventory[Item.metal.ordinal()] = metal;
         
         Item lantern = new Item();
         lantern.setDescription("Lantern");
         lantern.setQuantityInStock(0);
         lantern.setRequiredAmount(0);
-        inventory[Item.Lantern.ordinal()] = lantern;
+        inventory[Item.lantern.ordinal()] = lantern;
         
         Item food = new Item();
         food.setDescription("Food");
         food.setQuantityInStock(0);
         food.setRequiredAmount(0);
-        inventory[Item.Food.ordinal()] = food;
+        inventory[Item.food.ordinal()] = food;
         
         Item fuel = new Item();
         fuel.setDescription("Fuel");
         fuel.setQuantityInStock(0);
         fuel.setRequiredAmount(0);
-        inventory[Item.Fuel.ordinal()] = fuel;
+        inventory[Item.fuel.ordinal()] = fuel;
         
         Item spacecraft = new Item();
         spacecraft.setDescription("Spacecraft");
         spacecraft.setQuantityInStock(0);
         spacecraft.setRequiredAmount(0);
-        inventory[Item.Spacecraft.ordinal()] = spacecraft;
+        inventory[Item.spacecraft.ordinal()] = spacecraft;
         
         
         

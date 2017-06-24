@@ -13,12 +13,12 @@ import java.io.Serializable;
  */
 public enum Item implements Serializable {
     
-    Water("It is necessary to have energy on the planet"),
-    Metal("With this you can upgrade your ship."),
-    Lantern("This serves to illuminate dark places"),
-    Food("It is necessary to have energy"),
-    Fuel("Necesario para nuestra nave y para generar fuego."),
-    Spacecraft("It's necessary to travel between the planets.");
+    water("It is necessary to have energy on the planet"),
+    metal("With this you can upgrade your ship."),
+    lantern("This serves to illuminate dark places"),
+    food("It is necessary to have energy"),
+    fuel("Necesario para nuestra nave y para generar fuego."),
+    spacecraft("It's necessary to travel between the planets.");
     
     private final String description;
     private final Double quantityInStock;
