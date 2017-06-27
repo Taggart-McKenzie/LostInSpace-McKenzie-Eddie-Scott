@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.model;
 
+import byui.cit260.moonJumpers.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,67 +13,16 @@ import java.util.Objects;
  *
  * @author sshipp57
  */
-public class Map implements Serializable {
-    
-    private String currentLocation;
-    private String availableLocations;
+public class Map {
 
-    public Map() {
-    }
-    
-    
+    private Location[] locations;
 
-    public String getCurrentLocation() {
-        return currentLocation;
+    public Location[] getLocations() {
+        return locations;
     }
 
-    public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
+    public void setLocations(Location[] locations) {
+        this.locations = locations;
     }
 
-    public String getAvailableLocations() {
-        return availableLocations;
-    }
-
-    public void setAvailableLocations(String availableLocations) {
-        this.availableLocations = availableLocations;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.currentLocation);
-        hash = 79 * hash + Objects.hashCode(this.availableLocations);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
-            return false;
-        }
-        if (!Objects.equals(this.availableLocations, other.availableLocations)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "currentLocation=" + currentLocation + ", availableLocations=" + availableLocations + '}';
-    }
-    
-    
-    
-    
 }

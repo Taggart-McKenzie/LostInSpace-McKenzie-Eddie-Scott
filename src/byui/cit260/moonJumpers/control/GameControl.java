@@ -10,6 +10,7 @@ import byui.cit260.moonJumpers.model.Game;
 import byui.cit260.moonJumpers.model.Item;
 import byui.cit260.moonJumpers.model.Map;
 import byui.cit260.moonJumpers.model.Player;
+import byui.cit260.moonJumpers.model.Scene;
 import byui.cit260.moonJumpers.model.Weapon;
 import moonjumpers.MoonJumpers;
 
@@ -34,7 +35,11 @@ public class GameControl {
 
         return player;
     }
-
+    public static void createMap(Game game){
+        Map map = MapControl.createMap();
+        game.setMap(map); 
+    
+    }
     public static void createNewGame(Player player) {
 
         Game game = new Game();//create new game
@@ -131,5 +136,9 @@ public class GameControl {
         weapons[Weapon.homepump.ordinal()] = homepump;
 
         return weapons;
+    }
+
+    public static void assignScenesToLocation(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
