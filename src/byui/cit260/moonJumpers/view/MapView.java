@@ -16,7 +16,7 @@ import moonjumpers.MoonJumpers;
  */
 public class MapView {
 
-    private void displayMap() {
+    public void displayMap() {
         Game game = MoonJumpers.getCurrentGame();
         Map map = game.getMap();
         Location[] locations = map.getLocations();

@@ -35,11 +35,13 @@ public class GameControl {
 
         return player;
     }
-    public static void createMap(Game game){
+
+    public static void createMap(Game game) {
         Map map = MapControl.createMap();
-        game.setMap(map); 
-    
+        game.setMap(map);
+
     }
+
     public static void createNewGame(Player player) {
 
         Game game = new Game();//create new game
@@ -136,9 +138,5 @@ public class GameControl {
         weapons[Weapon.homepump.ordinal()] = homepump;
 
         return weapons;
-    }
-
-    public static void assignScenesToLocation(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

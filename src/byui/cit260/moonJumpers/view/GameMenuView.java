@@ -108,8 +108,8 @@ class GameMenuView {
 
     }
     private void travelMenu() {
-        TravelMenuView travelMenuView = new TravelMenuView();
-        travelMenuView.display();
+        MapView mapView = new MapView();
+        mapView.displayMap();
     }
     private void liftOff() {
         System.out.println("***lift off function***");

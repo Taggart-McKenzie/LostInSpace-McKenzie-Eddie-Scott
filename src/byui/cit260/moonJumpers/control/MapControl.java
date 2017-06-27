@@ -17,7 +17,7 @@ public class MapControl {
     static Map createMap() {
         Map map = new Map();
         Location[] locations = new Location[25];
-        
+
         locations[0] = new Location("Jupiter");
         locations[1] = new Location("Pluto");
         locations[2] = new Location("Neptune");
@@ -43,11 +43,10 @@ public class MapControl {
         locations[22] = new Location("Aries");
         locations[23] = new Location("NorthStar");
         locations[24] = new Location("Sun");
-        
+
         assignScenesToLocation(locations);
         return map;
-        
-        
+
     }
 
     static void moveActorToStartingLocation(Map map) {
@@ -57,5 +56,5 @@ public class MapControl {
     private static void assignScenesToLocation(Location[] locations) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
