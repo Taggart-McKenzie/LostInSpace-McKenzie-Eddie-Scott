@@ -15,7 +15,7 @@ import moonjumpers.MoonJumpers;
  * @author sshipp57
  */
 public class MapView {
-
+//Implement Child
     public void displayMap() {
         Game game = MoonJumpers.getCurrentGame();
         Map map = game.getMap();

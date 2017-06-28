@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.model.JupiterScene;
 import byui.cit260.moonJumpers.model.Location;
 import byui.cit260.moonJumpers.model.Map;
 
@@ -45,16 +46,40 @@ public class MapControl {
         locations[24] = new Location("Sun");
 
         assignScenesToLocation(locations);
+        map.setLocations(locations);
         return map;
 
     }
 
     static void moveActorToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private static void assignScenesToLocation(Location[] locations) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        locations[0].setScene(new JupiterScene());
+        locations[1].setScene(new JupiterScene());
+        locations[2].setScene(new JupiterScene());
+        locations[3].setScene(new JupiterScene());
+        locations[4].setScene(new JupiterScene());
+        locations[5].setScene(new JupiterScene());
+        locations[6].setScene(new JupiterScene());
+        locations[7].setScene(new JupiterScene());
+        locations[8].setScene(new JupiterScene());
+        locations[9].setScene(new JupiterScene());
+        locations[10].setScene(new JupiterScene());
+        locations[11].setScene(new JupiterScene());
+        locations[12].setScene(new JupiterScene());
+        locations[13].setScene(new JupiterScene());
+        locations[14].setScene(new JupiterScene());
+        locations[15].setScene(new JupiterScene());
+        locations[16].setScene(new JupiterScene());
+        locations[17].setScene(new JupiterScene());
+        locations[18].setScene(new JupiterScene());
+        locations[19].setScene(new JupiterScene());
+        locations[20].setScene(new JupiterScene());
+        locations[21].setScene(new JupiterScene());
+        locations[22].setScene(new JupiterScene());
+        locations[23].setScene(new JupiterScene());
+        locations[24].setScene(new JupiterScene());
     }
 
 }

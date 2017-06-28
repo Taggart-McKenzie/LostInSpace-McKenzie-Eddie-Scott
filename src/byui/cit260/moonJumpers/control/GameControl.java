@@ -50,11 +50,11 @@ public class GameControl {
         game.setPlayer(player);//save player in game
 
         //create the item list and save in the game
-        Item[] itemList = GameControl.createItemList();
-        game.setInventory(itemList);
+        //Item[] itemList = GameControl.createItemList();
+        //game.setInventory(itemList);
 
-        Weapon[] weaponList = GameControl.createWeaponList();
-        game.setWeapon(weaponList);
+        //Weapon[] weaponList = GameControl.createWeaponList();
+        //game.setWeapon(weaponList);
 
         Actor actor;
         game.setActor(Actor.Player);
@@ -66,10 +66,10 @@ public class GameControl {
 
     }
 
-    private static Item[] createItemList() {
+    /*private static Item[] createItemList() {
         Item[] inventory = new Item[6];
 
-        Item water = null;
+        Item water;
         water.setDescription("Water");
         water.setQuantityInStock(0);
         water.setRequiredAmount(0);
@@ -106,9 +106,9 @@ public class GameControl {
         inventory[Item.spacecraft.ordinal()] = spacecraft;
 
         return inventory;
-    }
+    }*/
 
-    private static Weapon[] createWeaponList() {
+    /*private static Weapon[] createWeaponList() {
 
         Weapon[] weapons = new Weapon[5];
 
@@ -138,5 +138,5 @@ public class GameControl {
         weapons[Weapon.homepump.ordinal()] = homepump;
 
         return weapons;
-    }
+    }*/
 }
