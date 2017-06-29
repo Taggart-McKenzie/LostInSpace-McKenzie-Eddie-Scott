@@ -6,6 +6,9 @@
 package byui.cit260.moonJumpers.view;
 
 import byui.cit260.moonJumpers.control.AlienControl;
+import byui.cit260.moonJumpers.exceptions.AlienControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,7 +29,12 @@ public class CurrentWeaponView extends View {
         String userInput = getInput();
         double attackPower = Double.parseDouble(userInput);
 
-        double result = AlienControl.calcCurrentWeapon(weaponSelect, attackPower);
+        double result = 0;
+        try {
+            result = AlienControl.calcCurrentWeapon(weaponSelect, attackPower);
+        } catch (AlienControlException ex) {
+            Logger.getLogger(CurrentWeaponView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         if (result < 0) {
             System.out.println("Sorry, Insert the corresponding values for the calculation..");

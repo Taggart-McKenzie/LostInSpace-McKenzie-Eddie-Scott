@@ -6,7 +6,10 @@
 package byui.cit260.moonJumpers.view;
 
 import byui.cit260.moonJumpers.control.AlienControl;
+import byui.cit260.moonJumpers.exceptions.AlienControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,7 +37,12 @@ public class RunningAwayView extends View {
         String thirdInput = getInput();
         double time = Double.parseDouble(thirdInput);
 
-        double result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);
+        double result = 0;
+        try {
+            result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);
+        } catch (AlienControlException ex) {
+            Logger.getLogger(RunningAwayView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         if (result < 0) {
             System.out.println("\nYou were caught by the alien");

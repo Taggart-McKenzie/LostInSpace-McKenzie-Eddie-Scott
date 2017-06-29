@@ -6,6 +6,9 @@
 package byui.cit260.moonJumpers.view;
 
 import byui.cit260.moonJumpers.control.AlienControl;
+import byui.cit260.moonJumpers.exceptions.AlienControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,7 +36,12 @@ public class FightAlienView extends View {
         String solution = this.getInput();
         double battle = Double.parseDouble(solution);
 
-        double result = AlienControl.calcFightingAlien(alienAttack, playerLife);
+        double result = 0;
+        try {
+            result = AlienControl.calcFightingAlien(alienAttack, playerLife);
+        } catch (AlienControlException ex) {
+            Logger.getLogger(FightAlienView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         if (result > 0) {
             System.out.println("Sorry, the alien won the battle.");
