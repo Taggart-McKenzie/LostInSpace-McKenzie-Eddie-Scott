@@ -112,7 +112,6 @@ class GameMenuView {
         mapView.displayMap();
     }
     private void liftOff() {
-        System.out.println("***lift off function***");
         LiftOffView liftOffView = new LiftOffView();
         liftOffView.display();
         

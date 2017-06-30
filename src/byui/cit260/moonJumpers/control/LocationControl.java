@@ -5,22 +5,24 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.exceptions.LocationControlException;
+
 /**
  *
  * @author sshipp57
  */
 public class LocationControl {
     public static final int LIFT_OFF = 10;
-    public static double calcLiftOff (double fuelAmount, double miles){
+    public static double calcLiftOff (double fuelAmount, double miles) throws LocationControlException{
         
         if (fuelAmount <= 0) {
-                return -1;
+                throw new LocationControlException();
                         }
         if (miles < 1) {
-                return -1;
+                throw new LocationControlException();
                         }
         if (miles > 5) {
-                return -1;
+                throw new LocationControlException();
         }
         
         double liftOff = (fuelAmount * miles) / LIFT_OFF;
