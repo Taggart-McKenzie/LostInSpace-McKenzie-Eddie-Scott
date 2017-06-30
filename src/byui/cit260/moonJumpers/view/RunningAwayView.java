@@ -23,7 +23,6 @@ public class RunningAwayView extends View {
 
     }
 
-    
     @Override
     public boolean doAction(String runningAwayOption) {
         double finalVelocity = Double.parseDouble(runningAwayOption);
@@ -41,7 +40,8 @@ public class RunningAwayView extends View {
         try {
             result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);
         } catch (AlienControlException ex) {
-            Logger.getLogger(RunningAwayView.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Invaild Number");
+            return false;
         }
 
         if (result < 0) {

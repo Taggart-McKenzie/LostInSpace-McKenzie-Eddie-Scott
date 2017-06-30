@@ -40,7 +40,8 @@ public class FightAlienView extends View {
         try {
             result = AlienControl.calcFightingAlien(alienAttack, playerLife);
         } catch (AlienControlException ex) {
-            Logger.getLogger(FightAlienView.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Invaild Number");
+            return false;
         }
 
         if (result > 0) {

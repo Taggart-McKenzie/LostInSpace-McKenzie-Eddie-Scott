@@ -33,14 +33,15 @@ public class LiftOffView extends View {
 
         displayMessage = "Calculate the solution to the problem:"
                 + "\n(fuelAmount * miles)/LIFT_OFF = liftOff";
-        String solution = this.getInput();
+        String solution = getInput();
         double liftOff = Double.parseDouble(solution);
 
         double result = 0;
         try {
             result = LocationControl.calcLiftOff(fuelAmount, miles);
         } catch (LocationControlException ex) {
-            Logger.getLogger(LiftOffView.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Invaild Number");
+            return false;
         }
 
         if (liftOff == result) {

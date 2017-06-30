@@ -15,6 +15,7 @@ import java.util.logging.Logger;
  * @author Eddie Pincay
  */
 public class CurrentWeaponView extends View {
+
     public CurrentWeaponView() {
         super("\nWhat is the power of your current weapon?"
                 + "\nSelect a number between 1-5?.");
@@ -33,7 +34,8 @@ public class CurrentWeaponView extends View {
         try {
             result = AlienControl.calcCurrentWeapon(weaponSelect, attackPower);
         } catch (AlienControlException ex) {
-            Logger.getLogger(CurrentWeaponView.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Invaild Number");
+            return false;
         }
 
         if (result < 0) {
@@ -43,5 +45,5 @@ public class CurrentWeaponView extends View {
         }
         return true;
     }
-    
+
 }
