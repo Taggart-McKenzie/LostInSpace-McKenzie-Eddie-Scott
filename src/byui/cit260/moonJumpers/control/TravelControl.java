@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.exceptions.TravelControlException;
 import java.util.Random;
 
 /**
@@ -19,13 +20,15 @@ public class TravelControl{
         random = newRandom;
     }
     
-    public static double calcGatherFuel(double userInput, double surfaceHardness){
+    public static double calcGatherFuel(double userInput, double surfaceHardness) 
+        throws TravelControlException{
         
         if (userInput < 1 || userInput > 10) { //must be between 1-10
-            return -1;
+            throw new TravelControlException("userInput cannot be less than 1 or "
+                                           + "greater than 10.");
         }
         if (surfaceHardness < 0) { //cannot be a negative number
-            return -1;
+            throw new TravelControlException("surfaceHardness cannot be a negative number.");
         }
         
         //random numbers between 0-20

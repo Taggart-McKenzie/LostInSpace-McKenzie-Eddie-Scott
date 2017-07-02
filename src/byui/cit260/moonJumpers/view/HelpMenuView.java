@@ -61,7 +61,9 @@ public class HelpMenuView extends View {
     }
 
     private void goalGame() {
-        System.out.println("\n*** Calls goalGame() function ***");
+        System.out.println("The goal is to return to Earth safely by navigating"
+                + " your way through space, fighting off dangerous alien creatures,"
+                + " and collecting resources to help you along the way.");
     }
 
     private void howMove() {

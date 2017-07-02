@@ -6,6 +6,7 @@
 package byui.cit260.moonJumpers.view;
 
 import byui.cit260.moonJumpers.control.TravelControl;
+import byui.cit260.moonJumpers.exceptions.TravelControlException;
 
 
 /**
@@ -14,6 +15,10 @@ import byui.cit260.moonJumpers.control.TravelControl;
  */
 public class GatherFuelView extends View {
 
+    private double surfaceHardness;
+    private double userInput;
+    
+
     public GatherFuelView(){
         super("\nPlease put in a number (1 - 10)");
 }
@@ -21,13 +26,26 @@ public class GatherFuelView extends View {
     
     @Override
     public boolean doAction(String gatherFuelView) {
+        try {
         double userInput = Double.parseDouble(gatherFuelView);
-        
+        } catch (NumberFormatException nf) {
+            System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+        }
         displayMessage = "What is the surface hardness?";
         String hardness = getInput();
-        double surfaceHardness = Double.parseDouble(hardness);
         
-        double result = TravelControl.calcGatherFuel(userInput, surfaceHardness);
+        try {
+            double surfaceHardness = Double.parseDouble(hardness);
+        } catch (NumberFormatException nf) {
+            System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+        }
+        
+        double result = 0;
+        try {
+            result = TravelControl.calcGatherFuel(userInput, surfaceHardness);
+        } catch (TravelControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         if (result < 0){
             System.out.println("You gathered no fuel");
