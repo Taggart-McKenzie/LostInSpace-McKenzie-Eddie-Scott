@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.exceptions.AlienControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class AlienControlTest {
      * Test of calcRunningAway method, of class AlienControl.
      */
     @Test
-    public void testCalcRunningAway() {
+    public void testCalcRunningAway() throws AlienControlException {
         System.out.println("calcRunningAway");
         
         /*****************************
@@ -130,7 +131,7 @@ public class AlienControlTest {
      * Test of calcFigthingAlien method, of class AlienControl.
      */
     @Test
-    public void testCalcFightingAlien() {
+    public void testCalcFightingAlien() throws AlienControlException {
         System.out.println("calcFightingAlien");
         
         /*****************************

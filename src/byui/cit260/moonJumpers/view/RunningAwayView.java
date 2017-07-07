@@ -40,15 +40,15 @@ public class RunningAwayView extends View {
         try {
             result = AlienControl.calcRunningAway(finalVelocity, initialVelocity, time);
         } catch (AlienControlException ex) {
-            System.out.println("Invaild Number");
+            ErrorView.display(this.getClass().getName(), "Invaild Number");
             return false;
         }
 
         if (result < 0) {
-            System.out.println("\nYou were caught by the alien");
+            this.console.println("\nYou were caught by the alien");
             return false;
         } else {
-            System.out.println("\nWow! You accelerated away from the alien"
+            this.console.println("\nWow! You accelerated away from the alien"
                     + "\nfast enough. You are safe!");
         }
 

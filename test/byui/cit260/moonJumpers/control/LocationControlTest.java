@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.exceptions.LocationControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class LocationControlTest {
      * Test of calcLiftOff method, of class LocationControl.
      */
     @Test
-    public void testCalcLiftOff() {
+    public void testCalcLiftOff() throws LocationControlException {
         System.out.println("calcLiftOff");
         
         System.out.println("\tTest case #1");

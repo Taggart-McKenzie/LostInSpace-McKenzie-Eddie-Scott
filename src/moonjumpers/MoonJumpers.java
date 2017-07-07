@@ -68,6 +68,8 @@ public class MoonJumpers {
                     MoonJumpers.inFile.close();
                 if (MoonJumpers.outFile != null)
                     MoonJumpers.outFile.close();
+                if(MoonJumpers.logFile != null)
+                   MoonJumpers.logFile.close();
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;

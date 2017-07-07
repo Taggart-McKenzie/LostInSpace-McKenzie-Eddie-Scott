@@ -5,7 +5,10 @@
  */
 package byui.cit260.moonJumpers.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import moonjumpers.MoonJumpers;
 
 /**
  *
@@ -14,7 +17,12 @@ import java.util.Scanner;
 class GameMenuView {
 
     private String menu;
-
+    
+    protected String displayMessage;
+    
+    protected final BufferedReader keyboard = MoonJumpers.getInFile();
+    protected final PrintWriter console = MoonJumpers.getOutFile();
+    
     public GameMenuView() {
         this.menu = "\n"
                 + "\n-------------------------------------"
@@ -46,25 +54,29 @@ class GameMenuView {
     }
 
     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);//get menu option from keyboard
-        String value = "";//value to be returned
+        
         boolean valid = false;//initialize to not valid
-
+        String value = null;//value to be returned
+        try {
+            
+        
         while (!valid) {//loop while an invalid value is entered
-            System.out.println("\nEnter a Menu Option" + this.menu);
+            this.console.println("\nEnter a Menu Option" + this.menu);
 
-            value = keyboard.nextLine();//get next line typed from keyboard
+            value = this.keyboard.readLine();//get next line typed from keyboard
             value = value.trim();//trim excess blanks
 
             if (value.length() < 1) {//value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(), "\nInvalid value: value can not be blank");
                 continue;
             }
 
             break;//end the loop
 
         }
-
+        } catch (Exception te) {
+            System.out.println("Error reading output: " + te.getMessage());
+        }
         return value;//return the value entered
     }
 
@@ -101,7 +113,7 @@ class GameMenuView {
                 this.quit();
                 break;
             default://returns invalid selection..try again to viewer
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -130,7 +142,7 @@ class GameMenuView {
         currentWeaponView.display();
     }
     private void saveGame() {
-        System.out.println("***this function will save the game***");
+        this.console.println("***this function will save the game***");
     }
     private void help() {
         HelpMenuView helpMenuView = new HelpMenuView();

@@ -48,7 +48,7 @@ public class MoveMenuView extends View {
                 this.viewMap();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -56,23 +56,23 @@ public class MoveMenuView extends View {
     }
 
     private void moveNorth() {
-        System.out.println("\n*** Move to North ***");
+        this.console.println("\n*** Move to North ***");
     }
 
     private void moveEast() {
-        System.out.println("\n*** Move to East ***");
+        this.console.println("\n*** Move to East ***");
     }
 
     private void moveWest() {
-        System.out.println("\n*** Move to West ***");
+        this.console.println("\n*** Move to West ***");
     }
 
     private void viewMap() {
-        System.out.println("\n*** View a Map ***");
+        this.console.println("\n*** View a Map ***");
     }
 
     private void moveSouth() {
-        System.out.println("\n*** Move to South ***");
+        this.console.println("\n*** Move to South ***");
     }
 
 }

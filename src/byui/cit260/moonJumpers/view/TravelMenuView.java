@@ -42,7 +42,7 @@ public class TravelMenuView extends View{
             case "C":
                 this.callisto();
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -50,20 +50,20 @@ public class TravelMenuView extends View{
     }
 
     private void jupiter() {
-        System.out.println("\n*** Welcome To The Planet Jupiter ***");
+        this.console.println("\n*** Welcome To The Planet Jupiter ***");
     }
 
     private void europa() {
-        System.out.println("\n*** Welcome To The Moon Europa ***");
+        this.console.println("\n*** Welcome To The Moon Europa ***");
     }
 
     private void ganymede() {
-        System.out.println("\n*** Welcome To The Moon Ganymede ***");
+        this.console.println("\n*** Welcome To The Moon Ganymede ***");
 
     }
 
     private void callisto() {
-        System.out.println("\n*** Welcome To The Moon Callisto ***");
+        this.console.println("\n*** Welcome To The Moon Callisto ***");
 
     }
 }

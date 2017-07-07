@@ -53,7 +53,7 @@ public class HelpMenuView extends View {
                 this.fightAlien();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -61,7 +61,7 @@ public class HelpMenuView extends View {
     }
 
     private void goalGame() {
-        System.out.println("The goal is to return to Earth safely by navigating"
+        this.console.println("The goal is to return to Earth safely by navigating"
                 + " your way through space, fighting off dangerous alien creatures,"
                 + " and collecting resources to help you along the way.");
     }

@@ -29,7 +29,7 @@ public class LiftOffView extends View {
         String farAway = getInput();
         double miles = Double.parseDouble(farAway);
 
-        System.out.println("LIFT_OFF value = 10");
+        this.console.println("LIFT_OFF value = 10");
 
         displayMessage = "Calculate the solution to the problem:"
                 + "\n(fuelAmount * miles)/LIFT_OFF = liftOff";
@@ -40,14 +40,14 @@ public class LiftOffView extends View {
         try {
             result = LocationControl.calcLiftOff(fuelAmount, miles);
         } catch (LocationControlException ex) {
-            System.out.println("Invaild Number");
+            ErrorView.display(this.getClass().getName(), "Invaild Number");
             return false;
         }
 
         if (liftOff == result) {
-            System.out.println("Sucessful lift off!");
+            this.console.println("Sucessful lift off!");
         } else {
-            System.out.println("Invalid, unsuccessful lift off. Try again.");
+            ErrorView.display(this.getClass().getName(), "Invalid, unsuccessful lift off. Try again.");
         }
         return true;
     }

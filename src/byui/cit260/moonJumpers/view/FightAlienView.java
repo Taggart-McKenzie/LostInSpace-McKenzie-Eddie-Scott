@@ -40,14 +40,14 @@ public class FightAlienView extends View {
         try {
             result = AlienControl.calcFightingAlien(alienAttack, playerLife);
         } catch (AlienControlException ex) {
-            System.out.println("Invaild Number");
+            ErrorView.display(this.getClass().getName(), "Invaild Number");
             return false;
         }
 
         if (result > 0) {
-            System.out.println("Sorry, the alien won the battle.");
+            this.console.println("Sorry, the alien won the battle.");
         } else {
-            System.out.println("Good job, you beat the alien! Here is a new weapon.");
+            this.console.println("Good job, you beat the alien! Here is a new weapon.");
             //add weapon to ItemControl
         }
         return true;

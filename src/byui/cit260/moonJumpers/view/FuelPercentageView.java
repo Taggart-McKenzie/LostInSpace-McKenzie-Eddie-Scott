@@ -31,7 +31,7 @@ public class FuelPercentageView extends View {
             //parse and convert number form text to a double
             double userInput = Double.parseDouble(fuelPercentageOption);            
         } catch (NumberFormatException nf) {
-            System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+            ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again or enter Q to quit.");
         }
 
 
@@ -40,21 +40,21 @@ public class FuelPercentageView extends View {
         try {
             double surfaceHardness = Double.parseDouble(secondInput);
         } catch (NumberFormatException nf){
-            System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+            ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again or enter Q to quit.");
         }
         
         double result = 0;
         try {
             result = TravelControl.calcGatherFuel(userInput, surfaceHardness);
         } catch (TravelControlException ex) {
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
         }
 
         if (result <= 0) {
-            System.out.println("\n You are Okay");
+            this.console.println("\n You are Okay");
             return false;
         } else {
-            System.out.println("\n You need Fuel");
+            this.console.println("\n You need Fuel");
         }
 
         return true;

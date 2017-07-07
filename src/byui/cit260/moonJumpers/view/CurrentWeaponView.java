@@ -34,14 +34,14 @@ public class CurrentWeaponView extends View {
         try {
             result = AlienControl.calcCurrentWeapon(weaponSelect, attackPower);
         } catch (AlienControlException ex) {
-            System.out.println("Invaild Number");
+            ErrorView.display(this.getClass().getName(), "Invaild Number");
             return false;
         }
 
         if (result < 0) {
-            System.out.println("Sorry, Insert the corresponding values for the calculation..");
+           ErrorView.display(this.getClass().getName(), "Sorry, Insert the corresponding values for the calculation..");
         } else {
-            System.out.println("Your current weapon has an attack of " + result + " points");
+            this.console.println("Your current weapon has an attack of " + result + " points");
         }
         return true;
     }

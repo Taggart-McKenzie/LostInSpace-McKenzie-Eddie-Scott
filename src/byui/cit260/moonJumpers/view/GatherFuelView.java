@@ -29,7 +29,7 @@ public class GatherFuelView extends View {
         try {
         double userInput = Double.parseDouble(gatherFuelView);
         } catch (NumberFormatException nf) {
-            System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+            ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again or enter Q to quit.");
         }
         displayMessage = "What is the surface hardness?";
         String hardness = getInput();
@@ -37,21 +37,21 @@ public class GatherFuelView extends View {
         try {
             double surfaceHardness = Double.parseDouble(hardness);
         } catch (NumberFormatException nf) {
-            System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+            ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again or enter Q to quit.");
         }
         
         double result = 0;
         try {
             result = TravelControl.calcGatherFuel(userInput, surfaceHardness);
         } catch (TravelControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
         
         if (result < 0){
-            System.out.println("You gathered no fuel");
+            this.console.println("You gathered no fuel");
             return false;
         } else {
-            System.out.println("You gathered " + result + " fuel");
+            this.console.println("You gathered " + result + " fuel");
         }
         return true;
     }

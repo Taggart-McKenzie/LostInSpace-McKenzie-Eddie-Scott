@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.exceptions.TravelControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,7 +18,7 @@ public class TravelControlTest {
      * Test of calcGatherFuel method, of class TravelControl.
      */
     @Test
-    public void testCalcGatherFuel() {
+    public void testCalcGatherFuel() throws TravelControlException {
         
         System.out.println("calcGatherFuel");       
         System.out.println("\tTest case #1");
