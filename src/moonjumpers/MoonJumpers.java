@@ -39,7 +39,7 @@ public class MoonJumpers {
     
     public static void main(String[] args) {
 
-        StartProgramView startProgramView = new StartProgramView();
+        
         try {
             //open character stream files for end user input and output
             MoonJumpers.inFile = 
@@ -51,13 +51,15 @@ public class MoonJumpers {
             MoonJumpers.logFile = new PrintWriter(filePath);
             
             //create StartProgramView and start the program
+            StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
+            return;
             
-        } catch (Throwable te) {
-            System.out.println("Exception: " + te.toString() +
-                               "\nCause: " + te.getCause() +
-                               "\nMessage: " + te.getMessage());
-            te.printStackTrace();
+        } catch (Throwable e) {
+            System.out.println("Exception: " + e.toString() +
+                               "\nCause: " + e.getCause() +
+                               "\nMessage: " + e.getMessage());
+            e.printStackTrace();
             //System.out.println(te.getMessage());
             //te.printStackTrace();
             //startProgramView.display();
