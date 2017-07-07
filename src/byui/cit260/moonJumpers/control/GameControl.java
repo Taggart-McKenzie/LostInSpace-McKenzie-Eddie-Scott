@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.control;
 
+import byui.cit260.moonJumpers.exceptions.GameControlException;
 import byui.cit260.moonJumpers.model.Actor;
 import byui.cit260.moonJumpers.model.Game;
 import byui.cit260.moonJumpers.model.Item;
@@ -12,6 +13,10 @@ import byui.cit260.moonJumpers.model.Map;
 import byui.cit260.moonJumpers.model.Player;
 import byui.cit260.moonJumpers.model.Scene;
 import byui.cit260.moonJumpers.model.Weapon;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import moonjumpers.MoonJumpers;
 
 /**
@@ -19,31 +24,31 @@ import moonjumpers.MoonJumpers;
  * @author Eddie Pincay
  */
 public class GameControl {
-
+    
     private static Weapon[] createWeaponList;
-
+    
     public static Player createPlayer(String name) {
-
+        
         if (name == null) {
             return null;
         }
-
+        
         Player player = new Player();
         player.setName(name);
-
+        
         MoonJumpers.setPlayer(player);
-
+        
         return player;
     }
-
+    
     public static void createMap(Game game) {
         Map map = MapControl.createMap();
         game.setMap(map);
-
+        
     }
-
+    
     public static void createNewGame(Player player) {
-
+        
         Game game = new Game();//create new game
         MoonJumpers.setCurrentGame(game);//save in Moon Jumpers
 
@@ -52,18 +57,16 @@ public class GameControl {
         //create the item list and save in the game
         //Item[] itemList = GameControl.createItemList();
         //game.setInventory(itemList);
-
         //Weapon[] weaponList = GameControl.createWeaponList();
         //game.setWeapon(weaponList);
-
         Actor actor;
         game.setActor(Actor.Player);
-
+        
         Map map = MapControl.createMap();
         game.setMap(map);
-
+        
         MapControl.moveActorToStartingLocation(map);
-
+        
     }
 
     /*private static Item[] createItemList() {
@@ -108,7 +111,7 @@ public class GameControl {
         return inventory;
     }*/
 
-    /*private static Weapon[] createWeaponList() {
+ /*private static Weapon[] createWeaponList() {
 
         Weapon[] weapons = new Weapon[5];
 
@@ -139,4 +142,28 @@ public class GameControl {
 
         return weapons;
     }*/
+    public static void saveGame(Game game, String filePath) throws GameControlException {
+        
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+            
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
+    public static void getSavedGame(String filePath) throws GameControlException {
+        Game game = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        MoonJumpers.setCurrentGame(game);
+    }
 }

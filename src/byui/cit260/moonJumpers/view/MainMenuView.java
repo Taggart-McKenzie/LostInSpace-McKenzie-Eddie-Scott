@@ -15,17 +15,18 @@ import moonjumpers.MoonJumpers;
  */
 public class MainMenuView extends View {
 
-    public MainMenuView(){
-        super(  "\n"
+    public MainMenuView() {
+        super("\n"
                 + "\n-------------------------------------"
                 + "\n| Main Menu                         |"
                 + "\n-------------------------------------"
                 + "\n N - Start New Game                  "
+                + "\n S - Save game                       "
                 + "\n R - Restore Existing Game           "
                 + "\n H - Get Help on How to Play the Game"
                 + "\n Q - Quit                            ");
     }
-    
+
     @Override
     public boolean doAction(String choice) {
 
@@ -34,6 +35,9 @@ public class MainMenuView extends View {
         switch (choice) {
             case "N":
                 this.startNewGame();
+                break;
+            case "S":
+                this.saveGame();
                 break;
             case "R":
                 this.startExistingGame();
@@ -59,7 +63,20 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        this.console.println("*** startExistingGame function called***");
+        this.console.println("\n\nEnter the file path for the file where the game "
+        + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try{
+        GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
+        
     }
 
     private void displayHelpMenu() {
@@ -67,5 +84,19 @@ public class MainMenuView extends View {
         HelpMenuView helpMenuView = new HelpMenuView();
 
         helpMenuView.display();
+    }
+    
+
+    private void saveGame() {
+        this.console.println("\n\nEnter the file path for file where the game "
+                + "is to be saved.");
+        String filePath = this.getInput();
+
+        try {
+
+            GameControl.saveGame(MoonJumpers.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 }
