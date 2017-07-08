@@ -24,6 +24,7 @@ public class MainMenuView extends View {
                 + "\n S - Save game                       "
                 + "\n R - Restore Existing Game           "
                 + "\n H - Get Help on How to Play the Game"
+                + "\n P - Print Report                    "
                 + "\n Q - Quit                            ");
     }
 
@@ -44,6 +45,9 @@ public class MainMenuView extends View {
                 break;
             case "H":
                 this.displayHelpMenu();
+                break;
+            case "P":
+                this.printReport();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
@@ -98,5 +102,19 @@ public class MainMenuView extends View {
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
+    }
+    
+    private void printReport() {
+        this.console.println("\n\nEnter the file path for file where the report "
+                + "is to be saved.");
+        String filePath = this.getInput();
+
+        try {
+
+            GameControl.printReport(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
+
     }
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.moonJumpers.view;
 
+import byui.cit260.moonJumpers.control.GameControl;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -17,12 +18,12 @@ import moonjumpers.MoonJumpers;
 class GameMenuView {
 
     private String menu;
-    
+
     protected String displayMessage;
-    
+
     protected final BufferedReader keyboard = MoonJumpers.getInFile();
     protected final PrintWriter console = MoonJumpers.getOutFile();
-    
+
     public GameMenuView() {
         this.menu = "\n"
                 + "\n-------------------------------------"
@@ -54,26 +55,25 @@ class GameMenuView {
     }
 
     private String getMenuOption() {
-        
+
         boolean valid = false;//initialize to not valid
         String value = null;//value to be returned
         try {
-            
-        
-        while (!valid) {//loop while an invalid value is entered
-            this.console.println("\nEnter a Menu Option" + this.menu);
 
-            value = this.keyboard.readLine();//get next line typed from keyboard
-            value = value.trim();//trim excess blanks
+            while (!valid) {//loop while an invalid value is entered
+                this.console.println("\nEnter a Menu Option" + this.menu);
 
-            if (value.length() < 1) {//value is blank
-                ErrorView.display(this.getClass().getName(), "\nInvalid value: value can not be blank");
-                continue;
+                value = this.keyboard.readLine();//get next line typed from keyboard
+                value = value.trim();//trim excess blanks
+
+                if (value.length() < 1) {//value is blank
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value can not be blank");
+                    continue;
+                }
+
+                break;//end the loop
+
             }
-
-            break;//end the loop
-
-        }
         } catch (Exception te) {
             System.out.println("Error reading output: " + te.getMessage());
         }
@@ -119,15 +119,18 @@ class GameMenuView {
         return false;
 
     }
+
     private void travelMenu() {
         MapView mapView = new MapView();
         mapView.displayMap();
     }
+
     private void liftOff() {
         LiftOffView liftOffView = new LiftOffView();
         liftOffView.display();
-        
+
     }
+
     private void gatherFuel() {
         GatherFuelView gatherFuelView = new GatherFuelView();
         gatherFuelView.display();
@@ -137,17 +140,21 @@ class GameMenuView {
         FuelPercentageView fuelPercentageView = new FuelPercentageView();
         fuelPercentageView.display();
     }
+
     private void currentWeapon() {
         CurrentWeaponView currentWeaponView = new CurrentWeaponView();
         currentWeaponView.display();
     }
+
     private void saveGame() {
         this.console.println("***this function will save the game***");
     }
+
     private void help() {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
     }
+
     private void quit() {
         //quit function called in the do while statement above
     }
@@ -157,4 +164,5 @@ class GameMenuView {
         fightAlienView.display();
     }
 
+    
 }
