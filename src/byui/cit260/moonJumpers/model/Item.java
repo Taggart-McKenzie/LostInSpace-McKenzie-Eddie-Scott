@@ -7,6 +7,7 @@ package byui.cit260.moonJumpers.model;
 
 import byui.cit260.moonJumpers.enums.ItemType;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,6 +18,7 @@ public class Item implements Serializable{
     private ItemType itemType;
     private String itemName;
     private String itemDescription;
+    
 
     // Default constructor
     public Item() {
@@ -45,6 +47,8 @@ public class Item implements Serializable{
     public void setItemDescription(String itemDescription) {
         this.itemDescription = itemDescription;
     }
+    
+    
 
     @Override
     public int hashCode() {

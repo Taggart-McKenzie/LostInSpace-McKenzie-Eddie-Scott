@@ -6,7 +6,11 @@
 package byui.cit260.moonJumpers.view;
 
 import byui.cit260.moonJumpers.control.GameControl;
+import byui.cit260.moonJumpers.exceptions.GameControlException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import moonjumpers.MoonJumpers;
 
 /**
@@ -47,7 +51,13 @@ public class MainMenuView extends View {
                 this.displayHelpMenu();
                 break;
             case "P":
+        {
+            try {
                 this.printReport();
+            } catch (GameControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             default:
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
@@ -103,18 +113,41 @@ public class MainMenuView extends View {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
     }
-    
-    private void printReport() {
-        this.console.println("\n\nEnter the file path for file where the report "
-                + "is to be saved.");
-        String filePath = this.getInput();
+     private void printReport() throws GameControlException {
+        String filePath = null;
+        boolean valid = false;
 
-        try {
+        this.console.println("Enter the name you want to save your List: ");
+        while (!valid) {
+            try {
+                //prompt for player input
 
-            GameControl.printReport(filePath);
-        } catch (Exception ex) {
-            ErrorView.display("GameMenuView", ex.getMessage());
+                filePath = this.keyboard.readLine();
+                filePath = filePath.trim();
+
+                if (filePath.length() < 1) {
+                    ErrorView.display(this.getClass().getName(),
+                            "\n***Invalid: entry required.!");
+                } else {
+                    valid = true;
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                throw new GameControlException(ex.getMessage());
+            }
         }
 
+        try {
+            //save inventory list to specified file
+            WriteItemList.writeItemList(MoonJumpers.getPlayer().getItemList(), filePath);
+            this.console.println("\nItem List successfully written to file " + filePath + ".");
+        } catch (IOException ioe) {
+            ErrorView.display("MainMenuView", ioe.getMessage());
+
+        }
     }
+    
+
+    
 }

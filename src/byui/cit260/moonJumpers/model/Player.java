@@ -6,27 +6,31 @@
 package byui.cit260.moonJumpers.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author Eddie Pincay
  */
-public class Player implements Serializable{
-    
+public class Player implements Serializable {
+
     // class instance variables
     //lifespan of name and bestTime begin here
     private String name;
     private double bestTime;
+    private ArrayList<String> itemList;
 
     public Player() {
+        itemList = new ArrayList<>();
+
     }
 
     @Override
     public String toString() {//scope of variable name and bestTime still available here
         return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7; //lifespan  of hash begins
@@ -56,8 +60,6 @@ public class Player implements Serializable{
         return true;
     }
 
-    
-    
     public String getName() {
         return name;
     }
@@ -73,5 +75,13 @@ public class Player implements Serializable{
     public void setBestTime(double bestTime) {
         this.bestTime = bestTime;
     }
-    
+
+    public ArrayList<String> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(ArrayList<String> itemList) {
+        this.itemList = itemList;
+    }
+
 }
