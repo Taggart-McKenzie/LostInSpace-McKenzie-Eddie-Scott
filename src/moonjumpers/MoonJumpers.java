@@ -2,6 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * Scott Shipp
  */
 package moonjumpers;
 
@@ -33,52 +34,52 @@ public class MoonJumpers {
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
-    
+
     private static PrintWriter logFile = null;
 
-    
     public static void main(String[] args) {
 
-        
         try {
             //open character stream files for end user input and output
-            MoonJumpers.inFile = 
-                    new BufferedReader(new InputStreamReader(System.in));
+            MoonJumpers.inFile
+                    = new BufferedReader(new InputStreamReader(System.in));
             MoonJumpers.outFile = new PrintWriter(System.out, true);
-            
+
             //open log file
             String filePath = "log.txt";
             MoonJumpers.logFile = new PrintWriter(filePath);
-            
+
             //create StartProgramView and start the program
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
             return;
-            
+
         } catch (Throwable e) {
-            System.out.println("Exception: " + e.toString() +
-                               "\nCause: " + e.getCause() +
-                               "\nMessage: " + e.getMessage());
+            System.out.println("Exception: " + e.toString()
+                    + "\nCause: " + e.getCause()
+                    + "\nMessage: " + e.getMessage());
             e.printStackTrace();
             //System.out.println(te.getMessage());
             //te.printStackTrace();
             //startProgramView.display();
-        }
-        finally {
+        } finally {
             try {
-                if (MoonJumpers.inFile != null)
+                if (MoonJumpers.inFile != null) {
                     MoonJumpers.inFile.close();
-                if (MoonJumpers.outFile != null)
+                }
+                if (MoonJumpers.outFile != null) {
                     MoonJumpers.outFile.close();
-                if(MoonJumpers.logFile != null)
-                   MoonJumpers.logFile.close();
+                }
+                if (MoonJumpers.logFile != null) {
+                    MoonJumpers.logFile.close();
+                }
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
             }
 
         }
-        
+
     }
 
     public static Game getCurrentGame() {
@@ -88,7 +89,7 @@ public class MoonJumpers {
     public static void setCurrentGame(Game currentGame) {
         MoonJumpers.currentGame = currentGame;
     }
-    
+
     public static Player getPlayer() {
         return player;
     }
@@ -96,7 +97,7 @@ public class MoonJumpers {
     public static void setPlayer(Player player) {
         MoonJumpers.player = player;
     }
-    
+
     public static PrintWriter getOutFile() {
         return outFile;
     }
